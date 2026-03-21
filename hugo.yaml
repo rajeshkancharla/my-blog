@@ -1,0 +1,47 @@
+baseURL: "https://yourdomain.com"        # CHANGE THIS later once you register domain
+languageCode: "en-us"
+title: "Rajesh's Blog"                   # CHANGE THIS to whatever you want
+theme: "PaperMod"
+pagination:
+  pagerSize: 10
+params:
+  env: production
+  author: "Rajesh"
+  description: "Writing about Data Engineering, AI, and building things."
+
+  homeInfoParams:
+    Title: "Hi, I'm Rajesh 👋"
+    Content: >
+      Data Engineer and AI builder.
+      Writing about real-world engineering, building Jarvis, and cloud architecture.
+
+  socialIcons:
+    - name: linkedin
+      url: "https://www.linkedin.com/in/rajeshkancharla/"
+    - name: github
+      url: "https://github.com/rajeshkancharla"
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+
+menu:
+  main:
+    - name: Posts
+      url: /posts/
+      weight: 1
+    - name: About
+      url: /about/
+      weight: 2
+    - name: Tags
+      url: /tags/
+      weight: 3
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
