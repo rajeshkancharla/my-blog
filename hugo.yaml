@@ -1,10 +1,13 @@
 baseURL: "https://rajeshkancharla.github.io/my-blog/"
 languageCode: "en-us"
-title: "AI in Practice"
+title: "AI at Work"
 theme: "PaperMod"
-relativeURLs: true
+
+canonifyURLs: true
+
 pagination:
   pagerSize: 10
+
 params:
   env: production
   author: "Rajesh"
@@ -18,7 +21,7 @@ params:
 
   socialIcons:
     - name: linkedin
-      url: "https://www.linkedin.com/in/rajeshkancharla/"
+      url: "https://linkedin.com/in/rajeshkancharla"
     - name: github
       url: "https://github.com/rajeshkancharla"
 
