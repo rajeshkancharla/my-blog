@@ -97,23 +97,52 @@ businesses run lean by design. Every hour the owner spends on admin is
 an hour not spent on the work that actually grows the business. AI 
 doesn't replace the owner — it gives them their time back.
 
+**Property conveyancers and settlement agents** : coordinating between 
+buyers, sellers, banks, and solicitors while tracking deadlines, 
+preparing disclosure documents, and managing a pipeline of settlements 
+that all seem to fall on the same day. Conveyancing is one of the most 
+document-intensive professions in existence. Every transaction involves 
+the same categories of work, repeated across dozens of files 
+simultaneously. AI is exceptionally well-suited to this - extracting 
+key dates and conditions from contracts, drafting routine client 
+updates, flagging missing documents, and keeping every party informed 
+without the conveyancer having to send the same email twelve times a 
+day.
+
 **Any small business** that runs on documents, emails, and 
 relationships : and feels like there aren't enough hours in the day.
 
 ## How Dataverse Works Differently
 
-We don't come in with a methodology deck and a six-month roadmap.
+We don't come in with a methodology deck and a six-month roadmap. 
+We don't bill you for discovery workshops before you've seen a single 
+result. And we don't disappear after handing over a report full of 
+recommendations you're not sure how to act on.
 
-We start by understanding how you actually work. What does a typical 
-day look like? Where do things slow down? What tasks do you or your 
-team do repeatedly that feel like they shouldn't require a human? What 
-keeps you at the desk when you'd rather be done for the day?
+We start by understanding how you actually work. Not in the abstract 
+— in the specific. What does a typical day look like? Where do things 
+slow down? What tasks do you or your team do repeatedly that feel like 
+they shouldn't require a human? What keeps you at the desk at 6pm when 
+you'd rather be done for the day?
+
+From that conversation, patterns emerge quickly. The conveyancer 
+sending the same document request email twenty times a week. The 
+accountant manually copying figures from client PDFs into a 
+spreadsheet. The property manager fielding the same maintenance 
+enquiries on rotation. The broker assembling the same supporting 
+documents for every application. These are not unique problems — they 
+are universal ones, and they are exactly the kind of problems AI solves 
+well.
 
 From there, we identify the two or three places where AI can make an 
-immediate, practical difference - not a theoretical one. We build 
-something small, working, and useful. We show you what's possible. And 
-we make sure you understand what you have, so you're not dependent on 
-us to keep the lights on.
+immediate, practical difference — not a theoretical one. We build 
+something small, working, and useful. We show you what's possible 
+before asking you to commit to anything larger. And we make sure you 
+understand what you have, so you are not dependent on us to keep the 
+lights on.
+
+**The goal is not to impress you with technology. The goal is to give 
+you back time.**
 
 **Minimal upfront cost. Practical outcomes. No lock-in.**
 
