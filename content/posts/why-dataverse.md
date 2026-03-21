@@ -1,5 +1,5 @@
 ---
-title: "Why I Started Dataverse - And Who It's Really For"
+title: "The AI Gap Nobody Is Talking About - And How Dataverse Can Help Closing it"
 date: 2026-03-21
 draft: false
 tags: ["AI", "SME", "Data Engineering", "AI Adoption", "Small Business"]
