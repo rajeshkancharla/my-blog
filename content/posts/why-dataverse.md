@@ -1,5 +1,5 @@
 ---
-title: "The AI Gap Nobody Is Talking About - And How Dataverse Can Help Closing it"
+title: "The AI Gap For Small Businesses - And How Dataverse Can Close It"
 date: 2026-03-21
 draft: false
 tags: ["AI", "SME", "Data Engineering", "AI Adoption", "Small Business"]
@@ -88,14 +88,14 @@ responding to enquiries, preparing rental reports, chasing maintenance
 requests, and keeping landlords updated. A small agency handling fifty 
 properties is drowning in routine communication that AI can handle in 
 the background, freeing agents to focus on what actually needs a human 
-— building relationships and closing deals.
+- building relationships and closing deals.
 
 **Family-operated and owner-run businesses** : the retailer managing 
 inventory and supplier emails, the trade business scheduling jobs and 
 sending quotes, the café owner tracking costs and rosters. These 
 businesses run lean by design. Every hour the owner spends on admin is 
 an hour not spent on the work that actually grows the business. AI 
-doesn't replace the owner — it gives them their time back.
+doesn't replace the owner - it gives them their time back.
 
 **Property conveyancers and settlement agents** : coordinating between 
 buyers, sellers, banks, and solicitors while tracking deadlines, 
@@ -109,8 +109,9 @@ updates, flagging missing documents, and keeping every party informed
 without the conveyancer having to send the same email twelve times a 
 day.
 
-**Any small business** that runs on documents, emails, and 
-relationships : and feels like there aren't enough hours in the day.
+And more broadly:
+
+> **Any business that runs on emails, documents, and relationships—and feels like there aren’t enough hours in the day.**
 
 ## How Dataverse Works Differently
 
