@@ -1,6 +1,6 @@
 baseURL: "https://dataverse-ai.org/"
 languageCode: "en-us"
-title: "Dataverse AI"
+title: "Dataverse"
 theme: "PaperMod"
 
 canonifyURLs: true
@@ -10,14 +10,16 @@ pagination:
 
 params:
   env: production
-  author: "Rajesh"
-  description: "Data Engineering, AI, and building intelligent systems"
+  author: "Rajesh Kancharla"
+  description: "Data & AI Engineering solutions for real-world problems."
 
   homeInfoParams:
-    Title: "Hi, I'm Rajesh 👋"
+    Title: "Engineering the Future with Data & AI"
     Content: >
-      Data & AI Engineer based in Sydney, Australia.
-      Building real-world solutions at the intersection of Data Engineering and AI — and writing about everything I learn along the way.
+      Dataverse builds intelligent data solutions at the intersection of
+      Data Engineering and Artificial Intelligence.
+      We help organisations unlock the power of their data through
+      modern cloud architecture, scalable pipelines, generative AI and AI agents.
 
   socialIcons:
     - name: linkedin
@@ -32,17 +34,23 @@ params:
   ShowCodeCopyButtons: true
   ShowToc: true
 
+  label:
+    text: "Dataverse"
+
 menu:
   main:
-    - name: Posts
+    - name: Blog
       url: /posts/
       weight: 1
     - name: About
       url: /about/
       weight: 2
-    - name: Tags
-      url: /tags/
+    - name: Services
+      url: /services/
       weight: 3
+    - name: Contact
+      url: /contact/
+      weight: 4
 
 outputs:
   home:
