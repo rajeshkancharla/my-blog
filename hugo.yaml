@@ -1,7 +1,8 @@
-baseURL: "https://yourdomain.com"        # CHANGE THIS later once you register domain
+baseURL: "https://rajeshkancharla.github.io/my-blog/"
 languageCode: "en-us"
-title: "Rajesh's Blog"                   # CHANGE THIS to whatever you want
+title: "AI in Practice"
 theme: "PaperMod"
+relativeURLs: true
 pagination:
   pagerSize: 10
 params:
