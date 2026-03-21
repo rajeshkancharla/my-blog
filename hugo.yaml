@@ -1,6 +1,6 @@
 baseURL: "https://dataverse-ai.org/"
 languageCode: "en-us"
-title: "AI at Work"
+title: "Dataverse AI"
 theme: "PaperMod"
 
 canonifyURLs: true
@@ -11,13 +11,13 @@ pagination:
 params:
   env: production
   author: "Rajesh"
-  description: "Writing about Data Engineering, AI, and building things."
+  description: "Data Engineering, AI, and building intelligent systems"
 
   homeInfoParams:
     Title: "Hi, I'm Rajesh 👋"
     Content: >
-      Data Engineer and AI builder.
-      Writing about real-world engineering, building Jarvis, and cloud architecture.
+      Data & AI Engineer based in Sydney, Australia.
+      Building real-world solutions at the intersection of Data Engineering and AI — and writing about everything I learn along the way.
 
   socialIcons:
     - name: linkedin
