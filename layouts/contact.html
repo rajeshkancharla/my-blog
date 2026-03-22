@@ -1,0 +1,262 @@
+{{- define "main" }}
+<div class="dvc-page">
+<div class="dvc-inner">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="dvc-hero">
+    <p class="dvc-eyebrow">Get In Touch</p>
+    <h1>Let's Build Something Together</h1>
+    <p class="dvc-lead">Have a data or AI challenge? Want to discuss a project?<br>We'd love to hear from you.</p>
+  </section>
+
+  <!-- ═══ BODY ═══ -->
+  <div class="dvc-body">
+
+    <!-- LEFT — Contact Information -->
+    <div class="dvc-left">
+      <h2 class="dvc-left-title">Contact Information</h2>
+      <p class="dvc-left-sub">Get in touch directly or use the form to send us a message.</p>
+
+      <div class="dvc-info-list">
+
+        <div class="dvc-info-item">
+          <div class="dvc-info-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <p class="dvc-info-label">Email</p>
+            <a href="mailto:hello@dataverse-ai.org" class="dvc-info-value dvc-link">hello@dataverse-ai.org</a>
+          </div>
+        </div>
+
+        <div class="dvc-info-item">
+          <div class="dvc-info-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <p class="dvc-info-label">Location</p>
+            <p class="dvc-info-value">Sydney, Australia</p>
+            <p class="dvc-info-sub">Available for remote engagements worldwide</p>
+          </div>
+        </div>
+
+        <div class="dvc-info-item">
+          <div class="dvc-info-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="dvc-info-label">Response Time</p>
+            <p class="dvc-info-value">Within 24 hours</p>
+            <p class="dvc-info-sub">Monday – Friday, business hours AEST</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="dvc-divider"></div>
+      <p class="dvc-footer-note">We typically respond within 24 hours during business days. For urgent matters, email us directly.</p>
+    </div>
+
+    <!-- RIGHT — Form -->
+    <div class="dvc-right">
+      <div class="dvc-form-card">
+        <h2 class="dvc-form-title">Send Us a Message</h2>
+        <p class="dvc-form-sub">Tell us about your use case and we'll get back to you shortly.</p>
+
+        <div class="dvc-success" id="dvc-success">
+          <div class="dvc-success-icon">✅</div>
+          <h3>Message Sent!</h3>
+          <p>Thanks for reaching out. We'll be in touch within 24 hours.</p>
+        </div>
+
+        <form id="dvc-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+          <input type="hidden" name="subject" value="New Contact Form Submission — Dataverse Solutions">
+          <input type="hidden" name="from_name" value="Dataverse Website">
+          <input type="checkbox" name="botcheck" style="display:none">
+
+          <div class="dvc-row">
+            <div class="dvc-field">
+              <input type="text" name="name" placeholder="Full Name *" required>
+            </div>
+            <div class="dvc-field">
+              <input type="email" name="email" placeholder="Email Address *" required>
+            </div>
+          </div>
+
+          <div class="dvc-field">
+            <input type="text" name="company" placeholder="Company Name">
+          </div>
+
+          <div class="dvc-field">
+            <input type="tel" name="phone" placeholder="Phone Number">
+          </div>
+
+          <div class="dvc-field">
+            <select name="service" required>
+              <option value="" disabled selected>Select Service of Interest *</option>
+              <option value="Data Engineering">Data Engineering</option>
+              <option value="Data Analytics">Data Analytics</option>
+              <option value="Data Migration">Data Migration</option>
+              <option value="Data Governance">Data Governance</option>
+              <option value="Cloud Solutions">Cloud Solutions</option>
+              <option value="AI Consulting">AI Consulting</option>
+              <option value="Generative AI">Generative AI</option>
+              <option value="AI Agents">AI Agents</option>
+              <option value="Other / General Enquiry">Other / General Enquiry</option>
+            </select>
+          </div>
+
+          <div class="dvc-field">
+            <textarea name="message" rows="5"
+              placeholder="Tell us about your project requirements, challenges, and goals *" required></textarea>
+          </div>
+
+          <button type="submit" class="dvc-submit" id="dvc-submit">
+            <span id="dvc-btn-text">Send Message</span>
+            <span id="dvc-btn-loading" style="display:none">Sending…</span>
+          </button>
+
+          <p class="dvc-note">We typically respond within 24 hours during business days.</p>
+          <p class="dvc-error" id="dvc-error" style="display:none">⚠️ Something went wrong. Please email us at hello@dataverse-ai.org</p>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div><!-- end dvc-inner / dvc-page -->
+
+<style>
+  /* Break out of PaperMod's narrow content wrapper — same trick as homepage */
+  .dvc-page {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+    padding: 0 4rem 6rem;
+  }
+  .dvc-inner {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  /* Hero */
+  .dvc-hero { text-align: center; padding: 4rem 2rem 3.5rem; }
+  .dvc-eyebrow { font-size: .85rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #007aff; margin-bottom: .75rem; }
+  .dvc-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 1rem; }
+  .dvc-lead { font-size: 1.1rem; line-height: 1.75; opacity: .7; margin: 0; }
+
+  /* Body grid — fills full inner width */
+  .dvc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; width: 100%; }
+
+  /* Left — blue panel */
+  .dvc-left { padding: 3.5rem 3rem; border-radius: 16px; background: linear-gradient(160deg, #1a6fff 0%, #0040cc 100%); color: #fff; position: sticky; top: 5rem; min-height: 600px; display: flex; flex-direction: column; }
+  .dark .dvc-left { background: linear-gradient(160deg, #1a3a6b 0%, #0d1f3c 100%) !important; }
+  @media (prefers-color-scheme: dark) { .dvc-left { background: linear-gradient(160deg, #1a3a6b 0%, #0d1f3c 100%) !important; } }
+  .dvc-left-title { font-size: 1.7rem; font-weight: 700; margin: 0 0 .75rem; color: #fff; }
+  .dvc-left-sub { font-size: 1rem; opacity: .85; margin: 0 0 3rem; line-height: 1.7; }
+
+  .dvc-info-list { display: flex; flex-direction: column; gap: 2.5rem; flex: 1; }
+  .dvc-info-item { display: flex; align-items: flex-start; gap: 1.5rem; }
+  .dvc-info-icon-wrap { width: 52px; height: 52px; border-radius: 14px; background: rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; }
+  .dvc-info-label { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .7; margin: 0 0 .35rem; }
+  .dvc-info-value { font-size: 1.05rem; font-weight: 600; margin: 0; color: #fff; }
+  .dvc-info-sub { font-size: .87rem; opacity: .65; margin: .35rem 0 0; line-height: 1.55; }
+  .dvc-link { text-decoration: none; color: #fff; }
+  .dvc-link:hover { text-decoration: underline; }
+
+  .dvc-divider { height: 1px; background: rgba(255,255,255,.2); margin: 3rem 0 1.75rem; }
+  .dvc-footer-note { font-size: .9rem; opacity: .7; line-height: 1.7; margin: 0; }
+
+  /* Right — form card */
+  .dvc-form-card { padding: 3.5rem 3rem; border-radius: 16px; background: var(--entry); border: 1px solid var(--border); }
+  .dvc-form-title { font-size: 1.7rem; font-weight: 700; margin: 0 0 .5rem; color: var(--primary); }
+  .dvc-form-sub { font-size: .95rem; opacity: .6; margin: 0 0 2.5rem; }
+
+  /* Form fields */
+  #dvc-form { display: flex; flex-direction: column; gap: 1.25rem; }
+  .dvc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .dvc-field { display: flex; flex-direction: column; }
+
+  .dvc-field input,
+  .dvc-field select,
+  .dvc-field textarea {
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--primary);
+    font-size: .95rem;
+    font-family: inherit;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .dvc-field input::placeholder,
+  .dvc-field textarea::placeholder { opacity: .45; }
+  .dvc-field input:focus,
+  .dvc-field select:focus,
+  .dvc-field textarea:focus { border-color: #007aff; box-shadow: 0 0 0 3px rgba(0,122,255,.1); }
+  .dvc-field textarea { resize: vertical; min-height: 160px; }
+  .dvc-field select { cursor: pointer; }
+
+  /* Submit */
+  .dvc-submit { width: 100%; padding: 1rem; background: linear-gradient(135deg, #007aff 0%, #0050d0 100%); color: #fff; border: none; border-radius: 8px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: transform .2s, box-shadow .2s, opacity .2s; margin-top: .5rem; }
+  .dvc-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,122,255,.35); }
+  .dvc-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .dvc-note { text-align: center; font-size: .8rem; opacity: .5; margin: .5rem 0 0; }
+  .dvc-error { color: #e53e3e; font-size: .85rem; text-align: center; margin: .5rem 0 0; }
+
+  /* Success */
+  .dvc-success { display: none; text-align: center; padding: 3rem 1rem; }
+  .dvc-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .dvc-success h3 { font-size: 1.4rem; font-weight: 700; margin: 0 0 .5rem; }
+  .dvc-success p { opacity: .7; margin: 0; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .dvc-body { grid-template-columns: 1fr; }
+    .dvc-left { position: static; min-height: auto; }
+    .dvc-info-list { flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
+    .dvc-info-item { flex: 1 1 calc(50% - .75rem); }
+  }
+  @media (max-width: 600px) {
+    .dvc-page { padding: 0 1.25rem 4rem; }
+    .dvc-row { grid-template-columns: 1fr; }
+    .dvc-form-card { padding: 2rem 1.5rem; }
+    .dvc-left { padding: 2rem 1.5rem; }
+    .dvc-info-item { flex: 1 1 100%; }
+  }
+</style>
+
+<script>
+  document.getElementById('dvc-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('dvc-submit');
+    const txt = document.getElementById('dvc-btn-text');
+    const ldr = document.getElementById('dvc-btn-loading');
+    const err = document.getElementById('dvc-error');
+    btn.disabled = true; txt.style.display = 'none'; ldr.style.display = 'inline'; err.style.display = 'none';
+    try {
+      const json = await (await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) })).json();
+      if (json.success) {
+        this.style.display = 'none';
+        document.querySelector('.dvc-form-title').style.display = 'none';
+        document.querySelector('.dvc-form-sub').style.display = 'none';
+        document.getElementById('dvc-success').style.display = 'block';
+      } else { throw new Error(); }
+    } catch {
+      err.style.display = 'block';
+      btn.disabled = false; txt.style.display = 'inline'; ldr.style.display = 'none';
+    }
+  });
+</script>
+
+{{- end }}
