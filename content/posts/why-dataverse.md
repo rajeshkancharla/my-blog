@@ -162,6 +162,5 @@ That's what Dataverse is here to help you find.
 *If you're a small or medium business curious about what AI could do 
 for your operations - not in theory, but in practice - I'd genuinely 
 love to have that conversation. Reach out at 
-[hello@dataverse-ai.org](mailto:hello@dataverse-ai.org) or connect 
-with me on [LinkedIn](https://linkedin.com/in/rajeshkancharla).*
+[hello@dataverse-ai.org](mailto:hello@dataverse-ai.org).*
 ```
