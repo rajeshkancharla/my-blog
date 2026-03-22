@@ -110,7 +110,7 @@ day.
 
 And more broadly:
 
-> **Any business that runs on emails, documents, and relationships—and feels like there aren’t enough hours in the day.**
+> **Any business that runs on emails, documents, and relationships-and feels like there aren’t enough hours in the day.**
 
 ## How Dataverse Works Differently
 
@@ -120,7 +120,7 @@ result. And we don't disappear after handing over a report full of
 recommendations you're not sure how to act on.
 
 We start by understanding how you actually work. Not in the abstract 
-— in the specific. What does a typical day look like? Where do things 
+- in the specific. What does a typical day look like? Where do things 
 slow down? What tasks do you or your team do repeatedly that feel like 
 they shouldn't require a human? What keeps you at the desk at 6pm when 
 you'd rather be done for the day?
@@ -130,12 +130,12 @@ sending the same document request email twenty times a week. The
 accountant manually copying figures from client PDFs into a 
 spreadsheet. The property manager fielding the same maintenance 
 enquiries on rotation. The broker assembling the same supporting 
-documents for every application. These are not unique problems — they 
+documents for every application. These are not unique problems - they 
 are universal ones, and they are exactly the kind of problems AI solves 
 well.
 
 From there, we identify the two or three places where AI can make an 
-immediate, practical difference — not a theoretical one. We build 
+immediate, practical difference - not a theoretical one. We build 
 something small, working, and useful. We show you what's possible 
 before asking you to commit to anything larger. And we make sure you 
 understand what you have, so you are not dependent on us to keep the 
@@ -160,7 +160,7 @@ That's what Dataverse is here to help you find.
 ---
 
 *If you're a small or medium business curious about what AI could do 
-for your operations — not in theory, but in practice — I'd genuinely 
+for your operations - not in theory, but in practice - I'd genuinely 
 love to have that conversation. Reach out at 
 [hello@dataverse-ai.org](mailto:hello@dataverse-ai.org) or connect 
 with me on [LinkedIn](https://linkedin.com/in/rajeshkancharla).*

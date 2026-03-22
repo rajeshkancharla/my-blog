@@ -1,0 +1,559 @@
+{{- define "main" }}
+
+{{/* ── BREAKOUT WRAPPER - same pattern as about / contact ── */}}
+<div class="dvs-page">
+<div class="dvs-inner">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="dvs-hero">
+    <p class="dvs-eyebrow">What We Do</p>
+    <h2 style="margin-top: 1.5rem;margin-bottom: 1rem;">AI Consulting & Custom AI Builds for Real Businesses</h2>
+    <p class="dvs-lead">We work with small and medium businesses to identify where AI can
+    make a practical difference - and then build the thing that makes that difference.
+    Not reports. Not roadmaps. Working software.</p>
+  </section>
+
+  <!-- ═══ SERVICE CARDS ═══ -->
+  <div class="dvs-divider"></div>
+  <section class="dvs-section">
+    <div class="dvs-section-header">
+      <span class="dvs-tag">Our Services</span>
+      <h3 style="margin-top: 1.5rem;margin-bottom: 1rem;">Four Things We Actually Build</h3>
+      <p class="dvs-section-intro">Every service starts with a conversation about your specific situation.
+      We don't apply templates - we identify what's practical for your context and build that.</p>
+    </div>
+
+    <div class="dvs-cards">
+
+      <!-- Card 1 -->
+      <div class="dvs-card">
+        <div class="dvs-card-accent dvs-accent-blue"></div>
+        <div class="dvs-card-body">
+          <div class="dvs-card-icon-row">
+            <span class="dvs-icon-wrap dvs-icon-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>
+            </span>
+            <span class="dvs-card-label">Discovery</span>
+          </div>
+          <h3>AI Use Case Discovery</h3>
+          <p>A short, focused engagement - typically one to three sessions - to map where
+          AI can genuinely reduce friction in your business. We look at your current workflows,
+          identify the repetitive and time-consuming tasks, and give you a clear, honest
+          picture of what's worth building and what isn't.</p>
+          <p>The output is a concrete recommendation, not a generic strategy document.
+          You walk away knowing exactly what to build first and why.</p>
+          <ul class="dvs-list">
+            <li>Workflow and process review</li>
+            <li>Prioritised list of practical AI opportunities</li>
+            <li>Honest assessment of effort vs. impact</li>
+            <li>No commitment required beyond the discovery itself</li>
+          </ul>
+        </div>
+        <div class="dvs-card-footer">
+          <span class="dvs-audience">Suitable for: Any SME exploring AI for the first time</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="dvs-card">
+        <div class="dvs-card-accent dvs-accent-purple"></div>
+        <div class="dvs-card-body">
+          <div class="dvs-card-icon-row">
+            <span class="dvs-icon-wrap dvs-icon-purple">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/></svg>
+            </span>
+            <span class="dvs-card-label">Build</span>
+          </div>
+          <h3>Custom AI Assistants &amp; Agents</h3>
+          <p>We design and build AI agents tailored to your business - not off-the-shelf
+          chatbots, but purpose-built assistants that connect to the tools you already use
+          and handle the tasks that are currently eating your team's time.</p>
+          <p>We've built agents that manage email and calendar, chase documents,
+          answer questions about uploaded files, handle WhatsApp messages, and coordinate
+          tasks across Google and Microsoft environments. We build what your business
+          actually needs, not what a vendor's demo shows.</p>
+          <ul class="dvs-list">
+            <li>Agents connected to email, calendar, and task tools</li>
+            <li>Voice and WhatsApp interfaces where useful</li>
+            <li>Google Workspace and Microsoft 365 integration</li>
+            <li>Deployed on cloud infrastructure you control</li>
+          </ul>
+        </div>
+        <div class="dvs-card-footer">
+          <span class="dvs-audience">Suitable for: Professional services, property, finance, operations</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="dvs-card">
+        <div class="dvs-card-accent dvs-accent-green"></div>
+        <div class="dvs-card-body">
+          <div class="dvs-card-icon-row">
+            <span class="dvs-icon-wrap dvs-icon-green">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-3-3v6"/><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+            </span>
+            <span class="dvs-card-label">Knowledge</span>
+          </div>
+          <h3>Document Intelligence</h3>
+          <p>If your business runs on documents - contracts, statements, reports, client
+          files - there's usually a better way to work with them than manually reading
+          through each one. We build systems that let you search, query, and extract
+          information from your document library using plain language.</p>
+          <p>Ask a question, get the answer and the source. Works across PDFs, Word
+          documents, scanned files, and mixed-format archives. Built using vector search
+          and retrieval-augmented generation - the same approach used in enterprise
+          document management tools, right-sized for an SME.</p>
+          <ul class="dvs-list">
+            <li>Natural language search across your document library</li>
+            <li>Supports PDFs, DOCX, scanned documents, and images</li>
+            <li>Answers grounded in your actual documents, not general AI knowledge</li>
+            <li>Secure - your documents stay within your environment</li>
+          </ul>
+        </div>
+        <div class="dvs-card-footer">
+          <span class="dvs-audience">Suitable for: Law firms, accountants, conveyancers, financial brokers</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="dvs-card">
+        <div class="dvs-card-accent dvs-accent-orange"></div>
+        <div class="dvs-card-body">
+          <div class="dvs-card-icon-row">
+            <span class="dvs-icon-wrap dvs-icon-orange">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 9l3 3-3 3m5 0h3"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+            </span>
+            <span class="dvs-card-label">Foundation</span>
+          </div>
+          <h3>Data Pipeline &amp; Integration</h3>
+          <p>AI only works well when the data feeding it is clean, structured, and
+          reliable. Many businesses have data scattered across spreadsheets, systems
+          that don't talk to each other, and manual processes bridging the gaps.
+          Before building anything clever on top, the foundations need to be right.</p>
+          <p>We build straightforward data pipelines that consolidate, clean, and
+          structure your data - whether that's for feeding an AI system, powering a
+          dashboard, or simply giving you a single source of truth you can trust.</p>
+          <ul class="dvs-list">
+            <li>Data consolidation from multiple sources and systems</li>
+            <li>Automated pipelines that replace manual data handling</li>
+            <li>Cloud-based storage and processing</li>
+            <li>Built as a prerequisite for AI, or as a standalone improvement</li>
+          </ul>
+        </div>
+        <div class="dvs-card-footer">
+          <span class="dvs-audience">Suitable for: Any business where data is spread across systems</span>
+        </div>
+      </div>
+
+    </div><!-- end dvs-cards -->
+  </section>
+
+  <!-- ═══ HOW WE WORK ═══ -->
+  <div class="dvs-divider"></div>
+  <section class="dvs-section">
+    <div class="dvs-section-header">
+      <span class="dvs-tag">How We Work</span>
+      <h3 style="margin-top: 1.5rem;margin-bottom: 1rem;">Small Engagements. Real Results</h3>
+      <p class="dvs-section-intro">We don't ask for a six-month commitment before you've
+      seen anything work. Every engagement follows the same simple structure.</p>
+    </div>
+
+    <div class="dvs-steps">
+      <div class="dvs-step">
+        <div class="dvs-step-num">01</div>
+        <h3>Understand</h3>
+        <p>We start with a focused conversation about how your business actually works -
+        not an intake form, not a questionnaire. We ask the right questions and listen
+        carefully. Most engagements are scoped clearly within one or two sessions.</p>
+      </div>
+      <div class="dvs-step-arrow">→</div>
+      <div class="dvs-step">
+        <div class="dvs-step-num">02</div>
+        <h3>Build</h3>
+        <p>We build something small and specific - a working proof of concept or a
+        production-ready first version, depending on what's appropriate. You see it
+        running in your environment before anything else is discussed.</p>
+      </div>
+      <div class="dvs-step-arrow">→</div>
+      <div class="dvs-step">
+        <div class="dvs-step-num">03</div>
+        <h3>Evolve</h3>
+        <p>If it's working and delivering value, we keep going. If something needs
+        adjusting, we adjust it. You decide the pace. No retainers required to keep
+        things running - we build things you can actually own and operate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HONEST SCOPE NOTE ═══ -->
+  <div class="dvs-divider"></div>
+  <section class="dvs-scope">
+    <div class="dvs-scope-inner">
+      <h3>A Note on Scope</h3>
+      <p>We're a small, focused practice. We don't take on everything, and we're
+      deliberate about that. If a problem is genuinely too large or requires capabilities
+      we don't have, we'll tell you directly rather than overpromise. What we do take on,
+      we do well - and we build things that continue working after the engagement ends.</p>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="dvs-cta">
+    <h2>Not Sure Where to Start?</h2>
+    <p>That's exactly what the discovery engagement is for. Tell us a bit about
+    your business and where the friction is, and we'll take it from there.</p>
+    <div class="dvs-cta-btns">
+      <a href="/contact/" class="dvs-btn-solid">Start a Conversation</a>
+      <a href="/about/" class="dvs-btn-ghost">Learn About Dataverse</a>
+    </div>
+  </section>
+
+</div><!-- end dvs-inner -->
+</div><!-- end dvs-page -->
+
+<style>
+  /* ══ Breakout - same pattern across all custom pages ══ */
+  .dvs-page {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+    padding: 0 4rem 6rem;
+  }
+  .dvs-inner {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  /* ══ Hero ══ */
+  .dvs-hero {
+    text-align: center;
+    padding: 5rem 2rem 3.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .dvs-eyebrow {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #007aff;
+    margin-bottom: .75rem;
+  }
+  .dvs-hero h1 {
+    font-size: clamp(1.75rem, 3vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 1.25rem;
+  }
+  .dvs-lead {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: .75;
+    margin: 0;
+  }
+
+  /* ══ Divider ══ */
+  .dvs-divider {
+    border: none;
+    border-top: 1px solid var(--border, rgba(128,128,128,.2));
+    margin: 0;
+    width: 100%;
+  }
+
+  /* ══ Section wrapper ══ */
+  .dvs-section {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ══ Section header ══ */
+  .dvs-section-header {
+    text-align: center;
+    max-width: 780px;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .dvs-section-header h2 {
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 800;
+    margin: .85rem 0 .75rem;
+  }
+  .dvs-section-intro {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    opacity: .7;
+    margin: 0;
+  }
+
+  /* ══ Tag pill - shared ══ */
+  .dvs-tag {
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #007aff;
+    background: rgba(0,122,255,.1);
+    border: 1.5px solid rgba(0,122,255,.3);
+    padding: .38rem .95rem;
+    border-radius: 25px;
+  }
+
+  /* ══ Service cards - 2-column grid ══ */
+  .dvs-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+    width: 100%;
+  }
+
+  .dvs-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  .dvs-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,.12);
+  }
+
+  /* Coloured top bar */
+  .dvs-card-accent { height: 4px; }
+  .dvs-accent-blue   { background: linear-gradient(90deg, #007aff, #0050d0); }
+  .dvs-accent-purple { background: linear-gradient(90deg, #7c3aed, #4f46e5); }
+  .dvs-accent-green  { background: linear-gradient(90deg, #059669, #0d9488); }
+  .dvs-accent-orange { background: linear-gradient(90deg, #ea580c, #d97706); }
+
+  .dvs-card-body {
+    padding: 2rem 2rem 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Icon row */
+  .dvs-card-icon-row {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+  }
+  .dvs-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .dvs-icon-blue   { background: rgba(0,122,255,.12); color: #007aff; }
+  .dvs-icon-purple { background: rgba(124,58,237,.12); color: #7c3aed; }
+  .dvs-icon-green  { background: rgba(5,150,105,.12);  color: #059669; }
+  .dvs-icon-orange { background: rgba(234,88,12,.12);  color: #ea580c; }
+
+  .dvs-card-label {
+    font-size: .73rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    opacity: .5;
+  }
+
+  .dvs-card-body h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary);
+    line-height: 1.3;
+  }
+  .dvs-card-body p {
+    font-size: .9rem;
+    line-height: 1.7;
+    opacity: .72;
+    margin: 0;
+  }
+
+  /* Bullet list inside card */
+  .dvs-list {
+    list-style: none;
+    padding: 0;
+    margin: .25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+  }
+  .dvs-list li {
+    font-size: .85rem;
+    line-height: 1.5;
+    opacity: .7;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .dvs-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #007aff;
+    font-weight: 700;
+    font-size: .8rem;
+  }
+
+  /* Card footer */
+  .dvs-card-footer {
+    padding: .9rem 2rem 1.1rem;
+    border-top: 1px solid var(--border);
+  }
+  .dvs-audience {
+    font-size: .78rem;
+    font-weight: 600;
+    opacity: .5;
+    font-style: italic;
+  }
+
+  /* ══ How We Work - 3 steps ══ */
+  .dvs-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+  .dvs-step {
+    flex: 1;
+    text-align: center;
+    padding: 2.5rem 1.75rem;
+    border-radius: 14px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+  }
+  .dvs-step-num {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #007aff;
+    opacity: .25;
+    line-height: 1;
+    margin-bottom: .75rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .dvs-step h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 .75rem;
+  }
+  .dvs-step p {
+    font-size: .88rem;
+    line-height: 1.7;
+    opacity: .7;
+    margin: 0;
+  }
+  .dvs-step-arrow {
+    font-size: 1.5rem;
+    color: #007aff;
+    opacity: .35;
+    padding-top: 3.5rem;
+    flex-shrink: 0;
+  }
+
+  /* ══ Honest scope note ══ */
+  .dvs-scope {
+    padding: 2.5rem 0 3rem;
+    display: flex;
+    justify-content: center;
+  }
+  .dvs-scope-inner {
+    max-width: 720px;
+    text-align: center;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    background: rgba(0,122,255,.05);
+    border: 1px solid rgba(0,122,255,.15);
+  }
+  .dvs-scope-inner h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #007aff;
+    margin: 0 0 .75rem;
+  }
+  .dvs-scope-inner p {
+    font-size: .9rem;
+    line-height: 1.75;
+    opacity: .75;
+    margin: 0;
+  }
+
+  /* ══ CTA ══ */
+  .dvs-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+    border-radius: 16px;
+    margin-top: 1rem;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .dvs-cta h2 { font-size: 1.8rem; font-weight: 800; margin: 0 0 .75rem; color: #fff; }
+  .dvs-cta p  { opacity: .9; font-size: 1rem; max-width: 560px; margin: 0 auto 2rem; line-height: 1.75; }
+  .dvs-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .dvs-btn-solid {
+    background: #fff; color: #007aff !important;
+    padding: .75rem 1.75rem; border-radius: 8px;
+    font-weight: 700; text-decoration: none; font-size: .95rem;
+    transition: all .2s;
+  }
+  .dvs-btn-solid:hover { background: #f0f0f0; transform: translateY(-2px); }
+  .dvs-btn-ghost {
+    background: transparent; color: #fff !important;
+    padding: .75rem 1.75rem; border-radius: 8px;
+    font-weight: 700; text-decoration: none; font-size: .95rem;
+    border: 2px solid rgba(255,255,255,.6); transition: all .2s;
+  }
+  .dvs-btn-ghost:hover { border-color: #fff; transform: translateY(-2px); }
+
+  /* ══ Dark mode ══ */
+  html.dark .dvs-card           { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.09); }
+  html.dark .dvs-card-body h3   { color: #f0f0f0; }
+  html.dark .dvs-card-body p    { color: #a0aec0; opacity: 1; }
+  html.dark .dvs-list li        { color: #a0aec0; opacity: 1; }
+  html.dark .dvs-step           { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.09); }
+  html.dark .dvs-step h3        { color: #f0f0f0; }
+  html.dark .dvs-step p         { color: #a0aec0; opacity: 1; }
+  html.dark .dvs-scope-inner    { background: rgba(0,122,255,.08); border-color: rgba(0,122,255,.2); }
+  html.dark .dvs-scope-inner p  { color: #a0aec0; opacity: 1; }
+  html.dark .dvs-section-header h2 { color: #f0f0f0; }
+  html.dark .dvs-section-intro  { color: #a0aec0; opacity: 1; }
+  html.dark .dvs-hero h1        { color: #f0f0f0; }
+
+  /* ══ Responsive ══ */
+  @media (max-width: 1024px) {
+    .dvs-page { padding: 0 2.5rem 5rem; }
+  }
+  @media (max-width: 900px) {
+    .dvs-cards { grid-template-columns: 1fr; }
+    .dvs-steps { flex-direction: column; align-items: stretch; }
+    .dvs-step-arrow { display: none; }
+  }
+  @media (max-width: 560px) {
+    .dvs-page { padding: 0 1.25rem 4rem; }
+    .dvs-hero { padding: 3rem 0 2.5rem; }
+    .dvs-cta  { padding: 2.5rem 1.25rem; border-radius: 10px; }
+    .dvs-cta h2 { font-size: 1.4rem; }
+    .dvs-card-body { padding: 1.5rem 1.5rem 1rem; }
+    .dvs-card-footer { padding: .75rem 1.5rem 1rem; }
+    .dvs-scope-inner { padding: 1.5rem; }
+  }
+</style>
+
+{{- end }}

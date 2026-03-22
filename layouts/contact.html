@@ -12,7 +12,7 @@
   <!-- ═══ BODY ═══ -->
   <div class="dvc-body">
 
-    <!-- LEFT — Contact Information -->
+    <!-- LEFT - Contact Information -->
     <div class="dvc-left" id="dvc-left">
       <h2 class="dvc-left-title">Contact Information</h2>
       <p class="dvc-left-sub">Get in touch directly or use the form to send us a message.</p>
@@ -57,7 +57,7 @@
       <p class="dvc-footer-note">We typically respond within 24 hours during business days. For urgent matters, email us directly.</p>
     </div>
 
-    <!-- RIGHT — Form -->
+    <!-- RIGHT - Form -->
     <div class="dvc-right">
       <div class="dvc-form-card">
         <h2 class="dvc-form-title">Send Us a Message</h2>
@@ -71,7 +71,7 @@
 
         <form id="dvc-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="2a741d88-fc4e-43a6-a859-65204c3e928b">
-          <input type="hidden" name="subject" value="New Contact Form Submission — Dataverse Solutions">
+          <input type="hidden" name="subject" value="New Contact Form Submission - Dataverse Solutions">
           <input type="hidden" name="from_name" value="Dataverse Website">
           <input type="checkbox" name="botcheck" style="display:none">
 
@@ -154,7 +154,7 @@
   /* ── Body grid ── */
   .dvc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; width: 100%; }
 
-  /* ── Left panel — light mode default ── */
+  /* ── Left panel - light mode default ── */
   .dvc-left {
     padding: 3.5rem 3rem;
     border-radius: 16px;
@@ -170,7 +170,7 @@
   }
 
   /*
-   * Dark mode override — CSS layer.
+   * Dark mode override - CSS layer.
    * html.dark has higher specificity (element + class) than plain .dark (class only),
    * which helps beat any competing theme rules.  !important is kept as a final backstop.
    * The JS observer below handles the initial paint and real-time toggle reliably.
@@ -200,7 +200,7 @@
   .dvc-divider { height: 1px; background: rgba(255,255,255,.2); margin: 3rem 0 1.75rem; }
   .dvc-footer-note { font-size: .9rem; opacity: .7; line-height: 1.7; margin: 0; }
 
-  /* ── Right — form card ── */
+  /* ── Right - form card ── */
   .dvc-form-card { padding: 3.5rem 3rem; border-radius: 16px; background: var(--entry); border: 1px solid var(--border); }
   .dvc-form-title { font-size: 1.7rem; font-weight: 700; margin: 0 0 .5rem; color: var(--primary); }
   .dvc-form-sub { font-size: .95rem; opacity: .6; margin: 0 0 2.5rem; }
@@ -272,7 +272,7 @@
    *   this page's <style> block lives inside the body (not <head>), the
    *   CSS cascade can lose to the theme stylesheet on the initial dark
    *   paint.  Setting an inline `background` bypasses the cascade entirely
-   *   — inline styles always win.  A MutationObserver keeps it in sync
+   *   - inline styles always win.  A MutationObserver keeps it in sync
    *   whenever the user clicks PaperMod's theme toggle.
    *
    * COLOURS:

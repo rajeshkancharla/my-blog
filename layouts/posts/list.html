@@ -1,0 +1,233 @@
+{{- define "main" }}
+
+<div class="dvb-page">
+<div class="dvb-inner">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="dvb-hero">
+    <p class="dvb-eyebrow">The Dataverse Journal</p>
+    <p class="dvb-lead">Observations from applying data and AI in real-world business environments.</p>
+  </section>
+
+  <!-- ═══ POST GRID ═══ -->
+  <div class="dvb-grid">
+    {{- range (where .Site.RegularPages "Type" "posts") }}
+    <a href="{{ .Permalink }}" class="dvb-card">
+
+      <!-- Coloured top accent bar - cycles through 4 colours by position -->
+      <div class="dvb-card-accent"></div>
+
+      <div class="dvb-card-body">
+        <!-- Tags -->
+        {{- if .Params.tags }}
+        <div class="dvb-tags">
+          {{- range first 2 .Params.tags }}
+          <span class="dvb-tag">{{ . }}</span>
+          {{- end }}
+        </div>
+        {{- end }}
+
+        <!-- Title -->
+        <h2 class="dvb-card-title">{{ .Title }}</h2>
+
+        <!-- Description / summary -->
+        <p class="dvb-card-desc">{{ .Description | default .Summary | truncate 140 }}</p>
+      </div>
+
+      <!-- Footer -->
+      <div class="dvb-card-footer">
+        <span class="dvb-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
+        <span class="dvb-dot">·</span>
+        <span class="dvb-meta">{{ .ReadingTime }} min read</span>
+        <span class="dvb-readmore">Read →</span>
+      </div>
+
+    </a>
+    {{- end }}
+  </div>
+
+  <!-- Empty state - shown only when no posts exist yet -->
+  {{- if not (where .Site.RegularPages "Type" "posts") }}
+  <div class="dvb-empty">
+    <div class="dvb-empty-icon">✍️</div>
+    <h3>Posts coming soon</h3>
+    <p>We're working on practical guides and insights. Check back shortly.</p>
+  </div>
+  {{- end }}
+
+</div><!-- end dvb-inner -->
+</div><!-- end dvb-page -->
+
+<style>
+  /* ══ Breakout - same pattern as homepage / about / contact ══ */
+  .dvb-page {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+    padding: 0 4rem 6rem;
+  }
+  .dvb-inner {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  /* ══ Hero ══ */
+  .dvb-hero {
+    text-align: center;
+    padding: 5rem 2rem 3.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .dvb-eyebrow {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #007aff;
+    margin-bottom: .75rem;
+  }
+  .dvb-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin: 0 0 1.25rem;
+  }
+  .dvb-lead {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: .75;
+    margin: 0;
+  }
+
+  /* ══ Card grid ══ */
+  .dvb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-top: 1rem;
+  }
+
+  /* ══ Card ══ */
+  .dvb-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  .dvb-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0,0,0,.13);
+  }
+
+  /* Coloured accent bar - each card gets a different colour via nth-child */
+  .dvb-card-accent {
+    height: 5px;
+    background: linear-gradient(90deg, #007aff, #0050d0);
+  }
+  .dvb-card:nth-child(3n+2) .dvb-card-accent {
+    background: linear-gradient(90deg, #7c3aed, #4f46e5);
+  }
+  .dvb-card:nth-child(3n+3) .dvb-card-accent {
+    background: linear-gradient(90deg, #059669, #0284c7);
+  }
+
+  /* ══ Card body ══ */
+  .dvb-card-body {
+    padding: 1.5rem 1.5rem .75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+  }
+
+  /* Tags row */
+  .dvb-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+  }
+  .dvb-tag {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: #007aff;
+    background: rgba(0,122,255,.1);
+    border: 1px solid rgba(0,122,255,.2);
+    padding: .2rem .6rem;
+    border-radius: 20px;
+  }
+
+  .dvb-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0;
+    color: var(--primary);
+  }
+  .dvb-card-desc {
+    font-size: .875rem;
+    line-height: 1.65;
+    opacity: .7;
+    margin: 0;
+    flex: 1;
+  }
+
+  /* ══ Card footer ══ */
+  .dvb-card-footer {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .9rem 1.5rem 1.1rem;
+    border-top: 1px solid var(--border);
+    font-size: .78rem;
+  }
+  .dvb-meta  { opacity: .55; }
+  .dvb-dot   { opacity: .35; }
+  .dvb-readmore {
+    margin-left: auto;
+    font-weight: 700;
+    color: #007aff;
+    font-size: .8rem;
+  }
+
+  /* ══ Empty state ══ */
+  .dvb-empty {
+    text-align: center;
+    padding: 5rem 2rem;
+    opacity: .6;
+  }
+  .dvb-empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .dvb-empty h3   { font-size: 1.3rem; margin: 0 0 .5rem; }
+  .dvb-empty p    { font-size: .95rem; margin: 0; }
+
+  /* ══ Dark mode ══ */
+  html.dark .dvb-card {
+    background: rgba(255,255,255,.04);
+    border-color: rgba(255,255,255,.09);
+  }
+  html.dark .dvb-card-title { color: #f0f0f0; }
+  html.dark .dvb-card-desc  { color: #a0aec0; opacity: 1; }
+
+  /* ══ Responsive ══ */
+  @media (max-width: 1024px) {
+    .dvb-page { padding: 0 2.5rem 5rem; }
+    .dvb-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .dvb-page { padding: 0 1.25rem 4rem; }
+    .dvb-grid { grid-template-columns: 1fr; }
+    .dvb-hero { padding: 3rem 0 2.5rem; }
+  }
+</style>
+
+{{- end }}
