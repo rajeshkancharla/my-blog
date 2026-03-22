@@ -87,8 +87,7 @@ this.
 responding to enquiries, preparing rental reports, chasing maintenance 
 requests, and keeping landlords updated. A small agency handling fifty 
 properties is drowning in routine communication that AI can handle in 
-the background, freeing agents to focus on what actually needs a human 
-- building relationships and closing deals.
+the background, freeing agents to focus on what actually needs a human - building relationships and closing deals.
 
 **Family-operated and owner-run businesses** : the retailer managing 
 inventory and supplier emails, the trade business scheduling jobs and 
