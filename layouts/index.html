@@ -93,26 +93,66 @@
   <!-- ═══ TECH STACK ═══ -->
   <section class="dv-tech-section">
     <div class="dv-tech-inner">
-    <h2 class="dv-section-title">Technology Stack</h2>
-    <p class="dv-section-sub">The platforms and tools we build with.</p>
-    <div class="dv-tech-grid">
-      <div class="dv-tc dv-tc-1">☁️<span>Google Cloud</span></div>
-      <div class="dv-tc dv-tc-2">🟠<span>AWS</span></div>
-      <div class="dv-tc dv-tc-3">🔷<span>Azure</span></div>
-      <div class="dv-tc dv-tc-4">🤖<span>OpenAI</span></div>
-      <div class="dv-tc dv-tc-5">🧠<span>Anthropic</span></div>
-      <div class="dv-tc dv-tc-6">♊<span>Gemini</span></div>
-      <div class="dv-tc dv-tc-7">🔗<span>LangChain</span></div>
-      <div class="dv-tc dv-tc-8">🔬<span>Kafka</span></div>
-      <div class="dv-tc dv-tc-9">⚡<span>FastAPI</span></div>
-      <div class="dv-tc dv-tc-10">🗄️<span>SQL</span></div>
-      <div class="dv-tc dv-tc-11">🐍<span>Python</span></div>
-      <div class="dv-tc dv-tc-12">🔄<span>dbt</span></div>
-      <div class="dv-tc dv-tc-13">🌿<span>NoSQL</span></div>
-      <div class="dv-tc dv-tc-14">🐳<span>Docker</span></div>
-      <div class="dv-tc dv-tc-15">✨<span>Apache Spark</span></div>
+      <h2 class="dv-section-title">Technology Stack</h2>
+      <p class="dv-section-sub">The platforms and tools we build with.</p>
+      <div class="dv-tech-groups">
+        <div class="dv-tech-group">
+          <div class="dv-tech-group-header">
+            <span class="dv-tech-icon">☁️</span>
+            <h3 class="dv-tech-group-title">Cloud Platforms</h3>
+          </div>
+          <ul class="dv-tech-list">
+            <li>Google Cloud</li>
+            <li>AWS</li>
+            <li>Azure</li>
+          </ul>
+        </div>
+        <div class="dv-tech-group">
+          <div class="dv-tech-group-header">
+            <span class="dv-tech-icon">🤖</span>
+            <h3 class="dv-tech-group-title">AI &amp; LLMs</h3>
+          </div>
+          <ul class="dv-tech-list">
+            <li>OpenAI</li>
+            <li>Anthropic</li>
+            <li>Gemini</li>
+          </ul>
+        </div>
+        <div class="dv-tech-group">
+          <div class="dv-tech-group-header">
+            <span class="dv-tech-icon">🔗</span>
+            <h3 class="dv-tech-group-title">Agentic &amp; Orchestration</h3>
+          </div>
+          <ul class="dv-tech-list">
+            <li>LangChain</li>
+            <li>LangSmith</li>
+            <li>FastAPI</li>
+          </ul>
+        </div>
+        <div class="dv-tech-group">
+          <div class="dv-tech-group-header">
+            <span class="dv-tech-icon">🗄️</span>
+            <h3 class="dv-tech-group-title">Data &amp; Warehousing</h3>
+          </div>
+          <ul class="dv-tech-list">
+            <li>Apache Spark & Kafka</li>
+            <li>SQL & NoSQL</li>
+            <li>dbt</li>
+          </ul>
+        </div>
+        <div class="dv-tech-group">
+          <div class="dv-tech-group-header">
+            <span class="dv-tech-icon">⚙️</span>
+            <h3 class="dv-tech-group-title">Data Engineering</h3>
+          </div>
+          <ul class="dv-tech-list">
+            <li>Python</li>
+            <li>Docker</li>
+            <li>Terraform</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    </div><!-- end dv-tech-inner -->
   </section>
 
   <!-- ═══ LATEST POSTS ═══ -->
@@ -177,47 +217,33 @@
 
   /* ── Why Dataverse cards ── */
   .dv-why-section { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; padding: 4rem 4rem; box-sizing: border-box; background: transparent; }
-  .dark .dv-why-section { background: transparent; }
-  .dark .dv-card { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.15); box-shadow: 0 2px 8px rgba(0,0,0,.3); }
   .dv-why-inner { max-width: 1400px; margin: 0 auto; }
   .dv-cards-row1 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem; align-items: stretch; }
   .dv-cards-row2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 940px; margin: 0 auto; align-items: stretch; }
-  :root { --dv-card-bg: #ffffff; --dv-card-border: #e2e8f0; --dv-card-shadow: 0 2px 8px rgba(0,0,0,.06); --dv-card-h3: #1a202c; --dv-card-p: #4a5568; }
-  .dark { --dv-card-bg: #2a2a3e; --dv-card-border: rgba(255,255,255,.12); --dv-card-shadow: 0 2px 12px rgba(0,0,0,.5); --dv-card-h3: #f0f0f0; --dv-card-p: #cbd5e0; }
-  .dv-card { padding: 2.5rem; border-radius: 12px; background: var(--dv-card-bg); border: 1px solid var(--dv-card-border); box-shadow: var(--dv-card-shadow); transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; min-height: 280px; }
+  .dv-card { padding: 2.5rem; border-radius: 12px; background: var(--entry); border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.06); transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; min-height: 280px; }
   .dv-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
   .dv-card-icon { font-size: 2rem; margin-bottom: 1rem; }
-  .dv-card h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 .75rem; color: var(--dv-card-h3); }
-  .dv-card p { font-size: .9rem; line-height: 1.75; color: var(--dv-card-p); margin: 0; flex-grow: 1; }
+  .dv-card h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 .75rem; color: var(--primary); }
+  .dv-card p { font-size: .9rem; line-height: 1.75; color: var(--secondary); margin: 0; flex-grow: 1; }
   @media (max-width: 900px) { .dv-cards-row1 { grid-template-columns: 1fr 1fr; } .dv-cards-row2 { grid-template-columns: 1fr 1fr; max-width: 100%; } .dv-why-section { padding: 3rem 2rem; } }
   @media (max-width: 600px) { .dv-cards-row1 { grid-template-columns: 1fr; } .dv-cards-row2 { grid-template-columns: 1fr; } }
 
   /* ── Tech stack ── */
   .dv-tech-section { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; padding: 3rem 4rem; box-sizing: border-box; }
-  .dv-tech-inner { max-width: 1400px; margin: 0 auto; }
-  .dv-tech-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 180px)); gap: .7rem; margin-top: 1.8rem; justify-content: center; }
-  .dv-tc { display: flex; flex-direction: row; align-items: center; gap: .4rem; padding: .45rem .75rem; border-radius: 6px; font-size: .7rem; font-weight: 600; border: 1px solid; transition: transform .2s, box-shadow .2s; cursor: default; white-space: nowrap; }
-  .dv-tc:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.1); }
-  .dv-tc > :first-child { font-size: 1rem; flex-shrink: 0; }
+  .dv-tech-inner { max-width: 1200px; margin: 0 auto; }
+  .dv-tech-groups { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; margin-top: 2rem; align-items: start; }
+  .dv-tech-group { padding: 1.5rem; border-radius: 12px; background: var(--entry); border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.06); transition: transform .2s, box-shadow .2s; }
+  .dv-tech-group:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+  .dv-tech-group-header { display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem; padding-bottom: .75rem; border-bottom: 1px solid var(--border); }
+  .dv-tech-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .dv-tech-group-title { font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #007aff; margin: 0; }
+  .dv-tech-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5rem; }
+  .dv-tech-list li { font-size: .9rem; line-height: 1.5; color: var(--secondary); padding-left: 1rem; position: relative; }
+  .dv-tech-list li::before { content: "›"; position: absolute; left: 0; color: #007aff; font-weight: 700; }
 
-  .dv-tc-1  { background: #e8f4fd; border-color: #4285f4; color: #1a56c4; }  /* Google Blue */
-  .dv-tc-2  { background: #fff3e8; border-color: #ff9900; color: #c45e00; }  /* AWS Orange */
-  .dv-tc-3  { background: #e8f0ff; border-color: #0078d4; color: #005fa3; }  /* Azure Blue */
-  .dv-tc-4  { background: #f0faf0; border-color: #10a37f; color: #0a7a5f; }  /* OpenAI Green */
-  .dv-tc-5  { background: #f5eeff; border-color: #7b2d8b; color: #5a1f68; }  /* Anthropic Purple */
-  .dv-tc-6  { background: #fffbe6; border-color: #e6ac00; color: #8a6600; }  /* Gemini Gold */
-  .dv-tc-7  { background: #e6fff5; border-color: #00b37d; color: #007a54; }  /* LangChain Teal */
-  .dv-tc-8  { background: #fff0e6; border-color: #e05c00; color: #a34400; }  /* LangSmith Burnt Orange */
-  .dv-tc-9  { background: #e6f9ff; border-color: #00b4d8; color: #007a93; }  /* FastAPI Cyan */
-  .dv-tc-10 { background: #eef0ff; border-color: #5c6bc0; color: #3a4499; }  /* SQL Indigo */
-  .dv-tc-11 { background: #fffde6; border-color: #c9a800; color: #7a6600; }  /* Python Yellow */
-  .dv-tc-12 { background: #ffe6e8; border-color: #d00026; color: #900019; }  /* dbt Red */
-  .dv-tc-13 { background: #edf5e6; border-color: #5a8a00; color: #3a5c00; }  /* Terraform Olive Green */
-  .dv-tc-14 { background: #e6f4ff; border-color: #0db7ed; color: #0080a8; }  /* Docker Sky Blue */
-  .dv-tc-15 { background: #fce6ff; border-color: #aa00cc; color: #780090; }  /* Spark Violet */
-
-  @media (max-width: 900px)  { .dv-tech-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 600px)  { .dv-tech-grid { grid-template-columns: repeat(2, 1fr); } .dv-tc { white-space: normal; } .dv-tech-section { padding: 2rem 1.5rem; } }
+  @media (max-width: 1024px) { .dv-tech-groups { grid-template-columns: repeat(3, 1fr); } .dv-tech-section { padding: 2.5rem 2rem; } }
+  @media (max-width: 640px)  { .dv-tech-groups { grid-template-columns: repeat(2, 1fr); } .dv-tech-section { padding: 2rem 1rem; } }
+  @media (max-width: 400px)  { .dv-tech-groups { grid-template-columns: 1fr; } }
 
   /* ── Blog post cards ── */
   .dv-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
