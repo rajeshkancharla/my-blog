@@ -1,6 +1,6 @@
 ---
 title: "Before ChatGPT: How a Big Four Bank Used AI to Scale a Critical Process"
-date: 2026-03-22
+date: 2026-03-21
 draft: false
 tags: ["AI", "Machine Learning", "Banking", "Case Study", "Data Engineering", "Human in the Loop"]
 description: "How a Big Four bank applied AI to solve a growing operational challenge."
