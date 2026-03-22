@@ -1,0 +1,91 @@
+{{- /* layouts/partials/extend_head.html */ -}}
+
+<style>
+  /* Hide PaperMod's original button */
+  #theme-toggle { display: none !important; }
+
+  /* Hidden checkbox — drives the visual toggle via :checked CSS */
+  #dv-chk { display: none !important; }
+
+  /* The label IS the visible toggle track */
+  label[for="dv-chk"] {
+    display:       inline-block;
+    width:         44px;
+    height:        24px;
+    border-radius: 12px;
+    background:    #a0aab4;
+    position:      relative;
+    cursor:        pointer;
+    transition:    background 0.25s ease;
+    flex-shrink:   0;
+    vertical-align: middle;
+  }
+
+  /* The thumb — ::after on a <label> works perfectly */
+  label[for="dv-chk"]::after {
+    content:       '';
+    display:       block;
+    position:      absolute;
+    width:         18px;
+    height:        18px;
+    border-radius: 50%;
+    background:    #ffffff;
+    top:           3px;
+    left:          3px;
+    box-shadow:    0 1px 4px rgba(0,0,0,0.3);
+    transition:    transform 0.25s ease;
+  }
+
+  /* CHECKED = dark mode: slide thumb right + blue track */
+  #dv-chk:checked + label[for="dv-chk"] {
+    background: #1e3a5f;
+  }
+  #dv-chk:checked + label[for="dv-chk"]::after {
+    transform: translateX(20px);
+  }
+</style>
+
+<script>
+(function () {
+  function init() {
+    var original = document.getElementById('theme-toggle');
+    if (!original) return;
+
+    /* Create checkbox + label and insert after original button */
+    var chk   = document.createElement('input');
+    var label = document.createElement('label');
+
+    chk.type  = 'checkbox';
+    chk.id    = 'dv-chk';
+
+    label.setAttribute('for', 'dv-chk');
+    label.setAttribute('aria-label', 'Toggle dark mode');
+
+    original.parentNode.insertBefore(chk,   original.nextSibling);
+    original.parentNode.insertBefore(label, chk.nextSibling);
+
+    /* Sync checkbox with current html.dark state */
+    function sync() {
+      chk.checked = document.documentElement.classList.contains('dark');
+    }
+    sync();
+
+    /* When user clicks our label/checkbox, fire PaperMod's button */
+    chk.addEventListener('change', function () {
+      original.click();
+    });
+
+    /* Keep in sync if PaperMod changes theme from elsewhere */
+    new MutationObserver(sync).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>

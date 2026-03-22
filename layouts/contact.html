@@ -13,7 +13,7 @@
   <div class="dvc-body">
 
     <!-- LEFT — Contact Information -->
-    <div class="dvc-left">
+    <div class="dvc-left" id="dvc-left">
       <h2 class="dvc-left-title">Contact Information</h2>
       <p class="dvc-left-sub">Get in touch directly or use the form to send us a message.</p>
 
@@ -128,7 +128,7 @@
 </div><!-- end dvc-inner / dvc-page -->
 
 <style>
-  /* Break out of PaperMod's narrow content wrapper — same trick as homepage */
+  /* ── Layout: break out of PaperMod's narrow content wrapper ── */
   .dvc-page {
     width: 100vw;
     position: relative;
@@ -145,19 +145,46 @@
     margin: 0 auto;
   }
 
-  /* Hero */
+  /* ── Hero ── */
   .dvc-hero { text-align: center; padding: 4rem 2rem 3.5rem; }
   .dvc-eyebrow { font-size: .85rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #007aff; margin-bottom: .75rem; }
   .dvc-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 1rem; }
   .dvc-lead { font-size: 1.1rem; line-height: 1.75; opacity: .7; margin: 0; }
 
-  /* Body grid — fills full inner width */
+  /* ── Body grid ── */
   .dvc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; width: 100%; }
 
-  /* Left — blue panel */
-  .dvc-left { padding: 3.5rem 3rem; border-radius: 16px; background: linear-gradient(160deg, #1a6fff 0%, #0040cc 100%); color: #fff; position: sticky; top: 5rem; min-height: 600px; display: flex; flex-direction: column; }
-  .dark .dvc-left { background: linear-gradient(160deg, #1a3a6b 0%, #0d1f3c 100%) !important; }
-  @media (prefers-color-scheme: dark) { .dvc-left { background: linear-gradient(160deg, #1a3a6b 0%, #0d1f3c 100%) !important; } }
+  /* ── Left panel — light mode default ── */
+  .dvc-left {
+    padding: 3.5rem 3rem;
+    border-radius: 16px;
+    background: linear-gradient(160deg, #1a6fff 0%, #0040cc 100%);
+    color: #fff;
+    position: sticky;
+    top: 5rem;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    /* CSS transition so the colour change feels smooth when user toggles theme */
+    transition: background 0.35s ease;
+  }
+
+  /*
+   * Dark mode override — CSS layer.
+   * html.dark has higher specificity (element + class) than plain .dark (class only),
+   * which helps beat any competing theme rules.  !important is kept as a final backstop.
+   * The JS observer below handles the initial paint and real-time toggle reliably.
+   */
+  html.dark .dvc-left {
+    background: linear-gradient(160deg, #1e3a5f 0%, #0f2340 100%) !important;
+  }
+  /* Fallback for browsers/setups that rely purely on OS preference */
+  @media (prefers-color-scheme: dark) {
+    html:not(.light) .dvc-left {
+      background: linear-gradient(160deg, #1e3a5f 0%, #0f2340 100%) !important;
+    }
+  }
+
   .dvc-left-title { font-size: 1.7rem; font-weight: 700; margin: 0 0 .75rem; color: #fff; }
   .dvc-left-sub { font-size: 1rem; opacity: .85; margin: 0 0 3rem; line-height: 1.7; }
 
@@ -173,12 +200,12 @@
   .dvc-divider { height: 1px; background: rgba(255,255,255,.2); margin: 3rem 0 1.75rem; }
   .dvc-footer-note { font-size: .9rem; opacity: .7; line-height: 1.7; margin: 0; }
 
-  /* Right — form card */
+  /* ── Right — form card ── */
   .dvc-form-card { padding: 3.5rem 3rem; border-radius: 16px; background: var(--entry); border: 1px solid var(--border); }
   .dvc-form-title { font-size: 1.7rem; font-weight: 700; margin: 0 0 .5rem; color: var(--primary); }
   .dvc-form-sub { font-size: .95rem; opacity: .6; margin: 0 0 2.5rem; }
 
-  /* Form fields */
+  /* ── Form fields ── */
   #dvc-form { display: flex; flex-direction: column; gap: 1.25rem; }
   .dvc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .dvc-field { display: flex; flex-direction: column; }
@@ -206,7 +233,7 @@
   .dvc-field textarea { resize: vertical; min-height: 160px; }
   .dvc-field select { cursor: pointer; }
 
-  /* Submit */
+  /* ── Submit button ── */
   .dvc-submit { width: 100%; padding: 1rem; background: linear-gradient(135deg, #007aff 0%, #0050d0 100%); color: #fff; border: none; border-radius: 8px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: transform .2s, box-shadow .2s, opacity .2s; margin-top: .5rem; }
   .dvc-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,122,255,.35); }
   .dvc-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; box-shadow: none; }
@@ -214,13 +241,13 @@
   .dvc-note { text-align: center; font-size: .8rem; opacity: .5; margin: .5rem 0 0; }
   .dvc-error { color: #e53e3e; font-size: .85rem; text-align: center; margin: .5rem 0 0; }
 
-  /* Success */
+  /* ── Success state ── */
   .dvc-success { display: none; text-align: center; padding: 3rem 1rem; }
   .dvc-success-icon { font-size: 3rem; margin-bottom: 1rem; }
   .dvc-success h3 { font-size: 1.4rem; font-weight: 700; margin: 0 0 .5rem; }
   .dvc-success p { opacity: .7; margin: 0; }
 
-  /* Responsive */
+  /* ── Responsive ── */
   @media (max-width: 1024px) {
     .dvc-body { grid-template-columns: 1fr; }
     .dvc-left { position: static; min-height: auto; }
@@ -237,22 +264,60 @@
 </style>
 
 <script>
-  document.getElementById('dvc-form').addEventListener('submit', async function(e) {
+  /* ─────────────────────────────────────────────────────────────────────
+   * Dark-mode panel fix
+   * ─────────────────────────────────────────────────────────────────────
+   * WHY this is needed:
+   *   PaperMod toggles a `dark` class on <html> via JavaScript.  Because
+   *   this page's <style> block lives inside the body (not <head>), the
+   *   CSS cascade can lose to the theme stylesheet on the initial dark
+   *   paint.  Setting an inline `background` bypasses the cascade entirely
+   *   — inline styles always win.  A MutationObserver keeps it in sync
+   *   whenever the user clicks PaperMod's theme toggle.
+   *
+   * COLOURS:
+   *   Light → vivid blue  #1a6fff → #0040cc
+   *   Dark  → deep navy   #1e3a5f → #0f2340
+   * ───────────────────────────────────────────────────────────────────── */
+  (function () {
+    var LIGHT_BG = 'linear-gradient(160deg, #1a6fff 0%, #0040cc 100%)';
+    var DARK_BG  = 'linear-gradient(160deg, #1e3a5f 0%, #0f2340 100%)';
+
+    function applyTheme() {
+      var panel = document.getElementById('dvc-left');
+      if (!panel) return;
+      var isDark = document.documentElement.classList.contains('dark');
+      panel.style.background = isDark ? DARK_BG : LIGHT_BG;
+    }
+
+    /* Run immediately (handles the initial render) */
+    applyTheme();
+
+    /* Watch for PaperMod toggling the `dark` class on <html> */
+    var observer = new MutationObserver(applyTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  })();
+
+  /* ── Form submission ── */
+  document.getElementById('dvc-form').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const btn = document.getElementById('dvc-submit');
-    const txt = document.getElementById('dvc-btn-text');
-    const ldr = document.getElementById('dvc-btn-loading');
-    const err = document.getElementById('dvc-error');
+    var btn = document.getElementById('dvc-submit');
+    var txt = document.getElementById('dvc-btn-text');
+    var ldr = document.getElementById('dvc-btn-loading');
+    var err = document.getElementById('dvc-error');
     btn.disabled = true; txt.style.display = 'none'; ldr.style.display = 'inline'; err.style.display = 'none';
     try {
-      const json = await (await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) })).json();
+      var json = await (await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) })).json();
       if (json.success) {
         this.style.display = 'none';
         document.querySelector('.dvc-form-title').style.display = 'none';
         document.querySelector('.dvc-form-sub').style.display = 'none';
         document.getElementById('dvc-success').style.display = 'block';
       } else { throw new Error(); }
-    } catch {
+    } catch (_) {
       err.style.display = 'block';
       btn.disabled = false; txt.style.display = 'inline'; ldr.style.display = 'none';
     }

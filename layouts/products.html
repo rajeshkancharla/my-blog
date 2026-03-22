@@ -1,0 +1,203 @@
+{{- define "main" }}
+<div class="dvp-page">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="dvp-hero">
+    <p class="dvp-eyebrow">Coming Soon</p>
+    <h1>Dataverse Products</h1>
+    <p class="dvp-lead">We're building a suite of ready-to-deploy AI and data tools
+    designed specifically for small and medium businesses. Check back soon —
+    or get in touch to find out what's in the pipeline.</p>
+    <a href="/contact/" class="dvp-btn">Talk to Us →</a>
+  </section>
+
+  <!-- ═══ TEASER CARDS ═══ -->
+  <div class="dvp-grid">
+
+    <div class="dvp-card dvp-card--soon">
+      <div class="dvp-card-icon">🤖</div>
+      <span class="dvp-badge">Coming Soon</span>
+      <h3>AI Starter Kit for Professional Services</h3>
+      <p>A pre-configured AI agent for accountants, conveyancers, and brokers —
+      ready to handle document chasing, client emails, and routine communications
+      out of the box.</p>
+    </div>
+
+    <div class="dvp-card dvp-card--soon">
+      <div class="dvp-card-icon">📊</div>
+      <span class="dvp-badge">Coming Soon</span>
+      <h3>Data Pipeline Templates</h3>
+      <p>Production-ready ETL pipeline templates for common SME use cases —
+      deploy a working data pipeline in hours, not weeks.</p>
+    </div>
+
+    <div class="dvp-card dvp-card--soon">
+      <div class="dvp-card-icon">💬</div>
+      <span class="dvp-badge">Coming Soon</span>
+      <h3>WhatsApp Business AI Bot</h3>
+      <p>An AI-powered WhatsApp bot that handles enquiries, schedules appointments,
+      and follows up with clients — fully integrated with your existing calendar
+      and email.</p>
+    </div>
+
+  </div>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="dvp-cta">
+    <h2>Want Early Access?</h2>
+    <p>We're working with a small group of businesses to shape these products.
+    If you're interested in being part of that, reach out.</p>
+    <a href="/contact/" class="dvp-btn-white">Get In Touch</a>
+  </section>
+
+</div>
+
+<style>
+  /* ── Layout ── */
+  .dvp-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2.5rem 5rem;
+  }
+
+  /* ── Hero ── */
+  .dvp-hero {
+    text-align: center;
+    padding: 5rem 2rem 4rem;
+  }
+  .dvp-eyebrow {
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #007aff;
+    margin-bottom: .75rem;
+  }
+  .dvp-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin: 0 0 1.25rem;
+  }
+  .dvp-lead {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    opacity: .75;
+    max-width: 680px;
+    margin: 0 auto 2rem;
+  }
+  .dvp-btn {
+    display: inline-block;
+    padding: .75rem 1.75rem;
+    background: linear-gradient(135deg, #007aff 0%, #0050d0 100%);
+    color: #fff !important;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: .95rem;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .dvp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 122, 255, .35);
+  }
+
+  /* ── Teaser card grid ── */
+  .dvp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-bottom: 4rem;
+  }
+  .dvp-card {
+    position: relative;
+    padding: 2.25rem 2rem;
+    border-radius: 14px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .dvp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .12);
+  }
+  .dvp-card-icon {
+    font-size: 2rem;
+    margin-bottom: .25rem;
+  }
+  .dvp-badge {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #007aff;
+    background: rgba(0, 122, 255, .1);
+    border: 1.5px solid rgba(0, 122, 255, .25);
+    padding: .25rem .65rem;
+    border-radius: 20px;
+    width: fit-content;
+  }
+  .dvp-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: .25rem 0 0;
+    color: var(--primary);
+  }
+  .dvp-card p {
+    font-size: .875rem;
+    line-height: 1.7;
+    opacity: .72;
+    margin: 0;
+  }
+
+  /* ── CTA ── */
+  .dvp-cta {
+    text-align: center;
+    padding: 3.5rem 2rem;
+    background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+    border-radius: 16px;
+    color: #fff;
+  }
+  .dvp-cta h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 .75rem;
+    color: #fff;
+  }
+  .dvp-cta p {
+    opacity: .9;
+    max-width: 520px;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+  }
+  .dvp-btn-white {
+    display: inline-block;
+    padding: .75rem 1.75rem;
+    background: #fff;
+    color: #007aff !important;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: .95rem;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+  }
+  .dvp-btn-white:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 860px) {
+    .dvp-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .dvp-page  { padding: 0 1rem 3rem; }
+    .dvp-grid  { grid-template-columns: 1fr; }
+    .dvp-hero  { padding: 3rem 0 2.5rem; }
+  }
+</style>
+{{- end }}

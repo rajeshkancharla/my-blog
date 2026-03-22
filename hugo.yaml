@@ -1,6 +1,6 @@
 baseURL: "https://dataverse-ai.org/"
 languageCode: "en-us"
-title: "Dataverse"
+title: "Dataverse AI Solutions"
 theme: "PaperMod"
 
 canonifyURLs: true
@@ -39,18 +39,21 @@ params:
 
 menu:
   main:
-    - name: Blog
-      url: /posts/
-      weight: 1
     - name: About
       url: /about/
-      weight: 2
+      weight: 10
+    - name: Blog
+      url: /posts/
+      weight: 20
     - name: Services
       url: /services/
-      weight: 3
+      weight: 30
+    - name: Products
+      url: /products/
+      weight: 40
     - name: Contact
       url: /contact/
-      weight: 4
+      weight: 50
 
 outputs:
   home:
