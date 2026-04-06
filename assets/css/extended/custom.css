@@ -1,0 +1,10 @@
+.post-content,
+.post-header,
+.post-title {
+    max-width: 900px;
+}
+
+.post-single {
+    max-width: 900px;
+    margin: 0 auto;
+}
