@@ -18,7 +18,7 @@ description: "Part 2 of the 3 part engineering journey that performs a systemati
 
 ### Why speed is not enough
 
-In Part 1, Llama 3.2:3b won every speed metric - 13.4 tokens per second, lowest latency, fewest tokens generated. On paper, an obvious choice.
+In Part 1 of this series, Llama 3.2:3b won every speed metric - 13.4 tokens per second, lowest latency, fewest tokens generated. On paper, an obvious choice.
 
 But my personal AI assistant that motivated this entire project - does not just need fast responses. It needs to parse structured data from documents. Extract entities. Return results in a predictable, machine-readable format that downstream code can consume without defensive gymnastics.
 
