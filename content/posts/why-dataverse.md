@@ -1,6 +1,6 @@
 ---
 title: "The AI Gap For Small Businesses - And How Dataverse Can Close It"
-date: 2026-06-30
+date: 2026-03-14
 draft: false
 tags: ["AI", "SME", "Data Engineering", "AI Adoption", "Small Business"]
 description: "Large enterprises have dedicated consulting partners. Small businesses have spreadsheets. Dataverse is created to change that."
