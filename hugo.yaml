@@ -13,6 +13,12 @@ params:
   author: "Rajesh Kancharla"
   description: "Data & AI Engineering solutions for real-world problems."
 
+  # ── Site mode toggle ──────────────────────────────────────────────────────
+  # Set to true  → visitors land on the blog; all other nav links are hidden.
+  # Set to false → full website with homepage, services, products, etc.
+  blogOnlyMode: true
+  # ─────────────────────────────────────────────────────────────────────────
+
   homeInfoParams:
     Title: "Engineering the Future with Data & AI"
     Content: >
@@ -38,6 +44,7 @@ params:
     text: "Dataverse"
 
 menu:
+  # Full website menu (used when blogOnlyMode: false)
   main:
     - name: About
       url: /about/
@@ -54,6 +61,11 @@ menu:
     - name: Contact
       url: /contact/
       weight: 50
+  # Blog-only menu (used when blogOnlyMode: true)
+  blog:
+    - name: Blog
+      url: /posts/
+      weight: 10
 
 outputs:
   home:

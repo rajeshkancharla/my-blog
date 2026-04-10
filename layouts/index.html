@@ -1,4 +1,10 @@
 {{- define "main" }}
+{{- if site.Params.blogOnlyMode }}
+  {{/* ── BLOG-ONLY MODE: redirect to /posts/ ── */}}
+  <meta http-equiv="refresh" content="0; url=/posts/">
+  <script>window.location.replace('/posts/');</script>
+  <p>Redirecting to <a href="/posts/">the blog</a>…</p>
+{{- else }}
 <div class="dataverse-home">
 
   <!-- ═══ HERO ═══ -->
@@ -265,4 +271,5 @@
     .dv-tech-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
   }
 </style>
+{{- end }}{{/* end blogOnlyMode else */}}
 {{- end }}
