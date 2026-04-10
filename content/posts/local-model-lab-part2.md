@@ -77,6 +77,8 @@ Getting the enforcement layer right was one problem. What the models actually re
 
 ### What only shows up when you actually run it
 
+Getting the enforcement layer right was one problem. What the models actually returned was another.
+
 These are not hypothetical scenarios. Each one surfaced during benchmark runs and had to be engineered around before the results meant anything.
 
 **Phi 3.5 outputs JavaScript-style inline comments inside JSON.**
