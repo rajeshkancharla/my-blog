@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <p class="dvp-card-desc">Jarvis is a production-grade AI agent that connects to your
+      <p class="dvp-card-desc">Jarvis is a production-grade Agentic AI agent that connects to your
       inbox, calendar, documents, and business tools - then handles the routine,
       time-consuming work so you can focus on what actually needs a human. It works across
       WhatsApp, your browser, and mobile, using natural language: just tell it what you need.</p>
@@ -48,17 +48,47 @@
       </div>
     </div>
 
-    <!-- ── Placeholder - future products ── -->
-    <div class="dvp-card dvp-card--placeholder">
-      <div class="dvp-placeholder-inner">
-        <div class="dvp-placeholder-icon">✦</div>
-        <p class="dvp-placeholder-label">More products in development</p>
-        <p class="dvp-placeholder-sub">We're working on additional tools for SMEs.
-        Get in touch if you'd like to shape what we build next.</p>
-        <a href="/contact/" class="dvp-btn-ghost dvp-btn-ghost--sm">Talk to Us →</a>
+    <!-- ── CricketHub ── -->
+    <div class="dvp-card dvp-card--cricket">
+      <div class="dvp-card-top">
+        <div class="dvp-card-logo dvp-card-logo--cricket">🏏</div>
+        <div>
+          <div class="dvp-card-badges">
+            <span class="dvp-badge dvp-badge--free">Free to Use</span>
+          </div>
+          <h2 class="dvp-card-name">CricketHub</h2>
+          <p class="dvp-card-tagline dvp-card-tagline--cricket">Your Cricket Team Planner</p>
+        </div>
+      </div>
+
+      <p class="dvp-card-desc">CricketHub is a smart squad planning tool for cricket organizers.
+      Build your squad, assign batsmen and bowlers across up to 10 concurrent games,
+      track who is batting and bowling in each match, and export print-ready team sheets
+      and analytics reports as PDFs - all free, in your browser, with no login required.</p>
+
+      <ul class="dvp-card-highlights">
+        <li>👥 Manage a squad of 6–15 players</li>
+        <li>🎮 Plan up to 10 concurrent games at once</li>
+        <li>🖱️ Drag-and-drop assignment (tap on mobile)</li>
+        <li>📄 Export team sheets &amp; analytics as PDF</li>
+        <li>📊 Batting position, availability &amp; absence reports</li>
+        <li>🔗 Share team plans instantly via URL</li>
+      </ul>
+
+      <div class="dvp-card-footer">
+        <a href="/crickethub/" class="dvp-btn-ghost">Learn More →</a>
+        <a href="https://rajeshkancharla.github.io/cricket-team/" class="dvp-btn-green" target="_blank" rel="noopener noreferrer">Access CricketHub</a>
       </div>
     </div>
 
+  </div>
+
+  <!-- ── More products placeholder ── -->
+  <div class="dvp-more-coming">
+    <div class="dvp-placeholder-icon">✦</div>
+    <p class="dvp-placeholder-label">More products in development</p>
+    <p class="dvp-placeholder-sub">We're working on additional tools. Get in touch if you'd like to shape what we build next.</p>
+    <a href="/contact/" class="dvp-btn-ghost dvp-btn-ghost--sm">Talk to Us →</a>
   </div>
 
   <!-- ═══ CTA ═══ -->
@@ -118,9 +148,9 @@
   /* ── Product grid ── */
   .dvp-grid {
     display: grid;
-    grid-template-columns: 1.8fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     align-items: stretch;
   }
 
@@ -148,8 +178,9 @@
     padding: .22rem .65rem;
     border-radius: 20px;
   }
-  .dvp-badge--soon    { color: #007aff; background: rgba(0,122,255,.1); border: 1.5px solid rgba(0,122,255,.25); }
+  .dvp-badge--soon     { color: #007aff; background: rgba(0,122,255,.1); border: 1.5px solid rgba(0,122,255,.25); }
   .dvp-badge--flagship { color: #7c3aed; background: rgba(124,58,237,.1); border: 1.5px solid rgba(124,58,237,.25); }
+  .dvp-badge--free     { color: #16a34a; background: rgba(22,163,74,.1); border: 1.5px solid rgba(22,163,74,.25); }
 
   .dvp-card-name { font-size: 2rem; font-weight: 900; margin: 0 0 .2rem; letter-spacing: -.01em; color: var(--primary); }
   .dvp-card-tagline { font-size: .9rem; font-weight: 600; color: #007aff; margin: 0; }
@@ -167,19 +198,40 @@
 
   .dvp-card-footer { display: flex; gap: .85rem; flex-wrap: wrap; margin-top: auto; padding-top: .5rem; }
 
-  /* ── Placeholder card ── */
-  .dvp-card--placeholder {
+  /* ── CricketHub card ── */
+  .dvp-card--cricket {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    border-top: 4px solid #16a34a;
+  }
+  .dvp-card--cricket:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.13); }
+  .dvp-card-logo--cricket {
+    font-size: 3.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-style: dashed;
-    background: transparent;
-    min-height: 280px;
+    background: rgba(22,163,74,.1);
+    border-radius: 14px;
+    border: 1.5px solid rgba(22,163,74,.2);
   }
-  .dvp-placeholder-inner { text-align: center; padding: 2rem; }
-  .dvp-placeholder-icon { font-size: 2rem; opacity: .3; margin-bottom: .75rem; }
-  .dvp-placeholder-label { font-size: .95rem; font-weight: 700; opacity: .55; margin: 0 0 .6rem; }
-  .dvp-placeholder-sub { font-size: .85rem; line-height: 1.65; opacity: .45; max-width: 240px; margin: 0 auto 1.25rem; }
+  .dvp-card-tagline--cricket { color: #16a34a; }
+
+  /* ── More coming strip ── */
+  .dvp-more-coming {
+    text-align: center;
+    padding: 2rem;
+    border: 1.5px dashed var(--border, rgba(128,128,128,.35));
+    border-radius: 12px;
+    margin-bottom: 4rem;
+  }
+  .dvp-placeholder-icon { font-size: 1.75rem; opacity: .3; margin-bottom: .6rem; }
+  .dvp-placeholder-label { font-size: .9rem; font-weight: 700; opacity: .55; margin: 0 0 .4rem; }
+  .dvp-placeholder-sub { font-size: .82rem; line-height: 1.6; opacity: .45; max-width: 360px; margin: 0 auto 1rem; }
 
   /* ── Buttons ── */
   .dvp-btn-solid {
@@ -206,6 +258,14 @@
     text-decoration: none; transition: transform .2s, box-shadow .2s;
   }
   .dvp-btn-purple:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,.35); }
+
+  .dvp-btn-green {
+    display: inline-block; padding: .75rem 1.6rem;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #fff !important; border-radius: 8px; font-weight: 700; font-size: .9rem;
+    text-decoration: none; transition: transform .2s, box-shadow .2s;
+  }
+  .dvp-btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,163,74,.35); }
 
   /* ── CTA ── */
   .dvp-cta {
@@ -238,7 +298,8 @@
   }
 
   /* ── Dark mode ── */
-  html.dark .dvp-card--featured { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); }
+  html.dark .dvp-card--featured,
+  html.dark .dvp-card--cricket { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); }
   html.dark .dvp-card-name { color: #f0f0f0; }
   html.dark .dvp-card-desc { color: #cbd5e0; opacity: 1; }
   html.dark .dvp-card-highlights li { color: #a0aec0; opacity: 1; }
@@ -247,7 +308,6 @@
   @media (max-width: 1024px) { .dvp-page { padding: 0 2.5rem 5rem; } }
   @media (max-width: 860px) {
     .dvp-grid { grid-template-columns: 1fr; }
-    .dvp-card--placeholder { min-height: 160px; }
   }
   @media (max-width: 560px) {
     .dvp-page { padding: 0 1.25rem 4rem; }
