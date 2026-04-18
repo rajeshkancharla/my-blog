@@ -196,4 +196,3 @@ The complete benchmark dataset, prompt suite, scoring methodology, raw JSONL res
 
 *This is Part 3 of a 3-part series. Part 1 covered infrastructure setup and inference speed benchmarking. Part 2 covered structured output reliability and temperature variance.*
 
-`#LocalAI #MachineLearning #LLM #Python #EdgeAI #OpenSource #AIEngineering #Ollama #DataEngineering`
