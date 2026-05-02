@@ -2,11 +2,13 @@
 title: "RAG in Production, Part 1: Why Observability Matters Before Anything Breaks"
 description: "Building a RAG pipeline is the easy part. This is Part 1 of a two-part series on how I instrumented my personal assistant's Vault for production - covering the four observability layers, span tracing, and the pipeline metrics that tell us whether our system is actually working."
 date: 2026-05-02
-tags: ["rag", "observability", "langchain", "langfuse", "langsmith", "llm", "production", "monitoring"]
+tags: ["rag", "observability", "langchain", "langfuse", "langsmith", "production", "monitoring"]
 categories: ["Technology", "AI", "Engineering"]
 draft: false
 ---
 ---
+
+![RAG Query Architecture](/images/RAG_Part1.png)
 
 > **New to RAG?** If you are relatively new to Retrieval-Augmented Generation and want to build a stronger foundation before diving in, start with [this introduction to RAG concepts](https://dataverse-ai.org/posts/rag-intro-blog/).
 
@@ -280,10 +282,6 @@ What they do not cover is what any of this cost, whether users actually found th
 
 > ***Coming in Part 2:*** *The pipeline metrics are only half the picture. Part 2 covers cost and token efficiency - including the gap between cost-per-query and cost-per-useful-answer that reveals whether the corpus is actually fit for purpose. Then explicit and implicit user feedback. Then the error taxonomy that makes debugging possible instead of just visible. And finally the 10-day trend view and CI gates that turn a snapshot dashboard into a real monitoring system.*
 
-*Continued in [Part 2: The User-Facing Half - Cost, Feedback, Errors, and Test Gates](/posts/rag-monitoring-production-part2)*
-
 ---
 
-*This is a personal AI assistant I have been building on Google Cloud Run, with integrations for Gmail, Google Calendar, OneDrive, and a full RAG pipeline. The observability stack described here is live and handling real queries.*
-
-#RAG #LLMOps #Observability #AIEngineering #LangChain #Langfuse #ProductionAI #MLOps #TechLeadership
+*NB: All the metrics defined in this blog are taken from my personal AI assistant I have been building on Google Cloud Run, with integrations for Google Workspace, Microsoft 365 and a full RAG pipeline. The observability stack described here is live and handling real queries.*
