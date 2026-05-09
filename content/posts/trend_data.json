@@ -1,0 +1,125 @@
+[
+  {
+    "date": "2026-04-29",
+    "rag.cost.daily_usd": 11.50,
+    "rag.tokens.daily_in": 45000,
+    "rag.tokens.daily_out": 18000,
+    "rag.user.satisfaction_score": 0.83,
+    "rag.user.rated_count": 95,
+    "rag.query.follow_up_rate": 0.14,
+    "rag.latency.p50_ms": 5200,
+    "rag.latency.p95_ms": 8200
+  },
+  {
+    "date": "2026-04-30",
+    "rag.cost.daily_usd": 12.00,
+    "rag.tokens.daily_in": 46000,
+    "rag.tokens.daily_out": 18500,
+    "rag.user.satisfaction_score": 0.85,
+    "rag.user.rated_count": 100,
+    "rag.query.follow_up_rate": 0.12,
+    "rag.latency.p50_ms": 5100,
+    "rag.latency.p95_ms": 8100
+  },
+  {
+    "date": "2026-05-01",
+    "rag.cost.daily_usd": 12.20,
+    "rag.tokens.daily_in": 47000,
+    "rag.tokens.daily_out": 19000,
+    "rag.user.satisfaction_score": 0.82,
+    "rag.user.rated_count": 98,
+    "rag.query.follow_up_rate": 0.13,
+    "rag.latency.p50_ms": 5000,
+    "rag.latency.p95_ms": 8000
+  },
+  {
+    "date": "2026-05-02",
+    "rag.cost.daily_usd": 12.50,
+    "rag.tokens.daily_in": 48000,
+    "rag.tokens.daily_out": 19500,
+    "rag.user.satisfaction_score": 0.86,
+    "rag.user.rated_count": 105,
+    "rag.query.follow_up_rate": 0.11,
+    "rag.latency.p50_ms": 4900,
+    "rag.latency.p95_ms": 7900
+  },
+  {
+    "date": "2026-05-03",
+    "rag.cost.daily_usd": 12.80,
+    "rag.tokens.daily_in": 49000,
+    "rag.tokens.daily_out": 20000,
+    "rag.user.satisfaction_score": 0.84,
+    "rag.user.rated_count": 102,
+    "rag.query.follow_up_rate": 0.12,
+    "rag.latency.p50_ms": 4800,
+    "rag.latency.p95_ms": 7800
+  },
+  {
+    "date": "2026-05-04",
+    "rag.cost.daily_usd": 13.00,
+    "rag.tokens.daily_in": 50000,
+    "rag.tokens.daily_out": 20500,
+    "rag.user.satisfaction_score": 0.87,
+    "rag.user.rated_count": 108,
+    "rag.query.follow_up_rate": 0.10,
+    "rag.latency.p50_ms": 4700,
+    "rag.latency.p95_ms": 7700
+  },
+  {
+    "date": "2026-05-05",
+    "rag.cost.daily_usd": 13.20,
+    "rag.tokens.daily_in": 51000,
+    "rag.tokens.daily_out": 21000,
+    "rag.user.satisfaction_score": 0.85,
+    "rag.user.rated_count": 106,
+    "rag.query.follow_up_rate": 0.11,
+    "rag.latency.p50_ms": 4600,
+    "rag.latency.p95_ms": 7600
+  },
+  {
+    "date": "2026-05-06",
+    "rag.cost.daily_usd": 13.50,
+    "rag.cost.per_query_usd": 0.0028,
+    "rag.cost.per_successful_usd": 0.011,
+    "rag.cost.per_grounded_usd": 0.013,
+    "rag.tokens.daily_in": 52000,
+    "rag.tokens.daily_out": 21500,
+    "rag.tokens.per_successful": 145,
+    "rag.user.satisfaction_score": 0.88,
+    "rag.user.rated_count": 110,
+    "rag.query.follow_up_rate": 0.09,
+    "rag.latency.p50_ms": 4500,
+    "rag.latency.p95_ms": 7500
+  },
+  {
+    "date": "2026-05-07",
+    "rag.cost.daily_usd": 13.80,
+    "rag.cost.per_query_usd": 0.0029,
+    "rag.cost.per_successful_usd": 0.0115,
+    "rag.cost.per_grounded_usd": 0.0135,
+    "rag.tokens.daily_in": 53000,
+    "rag.tokens.daily_out": 22000,
+    "rag.tokens.per_successful": 148,
+    "rag.user.satisfaction_score": 0.86,
+    "rag.user.rated_count": 107,
+    "rag.query.follow_up_rate": 0.10,
+    "rag.latency.p50_ms": 4400,
+    "rag.latency.p95_ms": 7400
+  },
+  {
+    "date": "2026-05-08",
+    "rag.cost.daily_usd": 14.00,
+    "rag.cost.per_query_usd": 0.003,
+    "rag.cost.per_successful_usd": 0.012,
+    "rag.cost.per_grounded_usd": 0.014,
+    "rag.tokens.daily_in": 54000,
+    "rag.tokens.daily_out": 22500,
+    "rag.tokens.per_successful": 150,
+    "rag.user.satisfaction_score": 0.87,
+    "rag.user.rated_count": 109,
+    "rag.query.follow_up_rate": 0.08,
+    "rag.latency.p50_ms": 4300,
+    "rag.latency.p95_ms": 7300
+  }
+]</content>
+<parameter name="filePath">C:\Users\rajes\OneDrive\blog\my-blog\content\posts\trend_data.json

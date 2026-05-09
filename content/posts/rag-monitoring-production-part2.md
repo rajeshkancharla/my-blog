@@ -1,6 +1,6 @@
 ---
 title: "RAG in Production, Part 2: The User-Facing Half - Cost, Feedback, Errors, and Test Gates"
-description: "Part 2 of the RAG monitoring deep-dive: cost-quality tradeoffs, token efficiency, explicit and implicit user feedback, the error taxonomy, 10-day trend charts, and the CI test gates that keep the signals honest."
+description: "A pipeline that scores green on every metric can still be quietly failing its users. This is Part 2 of the series - covering cost-per-useful-answer, explicit and implicit user feedback, a typed error taxonomy, 10-day trend charts, and the CI gates that keep the signals honest."
 date: 2026-05-09
 tags: ["rag", "observability", "langchain", "langfuse", "langsmith", "llm", "production", "monitoring"]
 categories: ["Technology", "AI", "Engineering"]
@@ -9,7 +9,7 @@ draft: false
 
 <br>
 
-## Part 2 of 2 - Pipeline metrics show how the system behaved. The signals here show whether it mattered.
+## Part 2 of 2 - RAG is easy to measure. Harder to trust the measurements.
 
 *Cost compounds quietly. Users don't explain why they stopped asking questions. Errors without a taxonomy are just noise. These are the observability layers that most RAG dashboards skip.*
 
@@ -40,11 +40,11 @@ Raw cost is straightforward to track. The more useful question is cost *per usef
 | `rag.cost.per_successful_usd` | Cost per sufficient answer - what is actually paid for a useful response |
 | `rag.cost.per_grounded_usd` | Cost per cited and sufficient answer - the tightest quality bar |
 
-Cost ratios (`per_successful`, `per_grounded`) are OpenAI only - they rely on the OpenAI callback that captures per-call spend, which does not fire for Gemini models. These cards show `-` when a Gemini model is in use. `rag.cost.daily_usd` is the one card that also shows yesterday's spend as a sub-label, giving an immediate day-over-day comparison without opening the trend chart.
+The gap between these three cost lines is the signal. When `per_successful` diverges from `per_query`, the corpus is failing to support answers - not the model, and not the prompt. The trend charts in Section 9 show exactly when and why that gap opened.
 
-The distinction between `per_query`, `per_successful`, and `per_grounded` is intentional.
+> **Note - Provider dependency:** Cost metrics require LangChain's OpenAI callback and return no value for Gemini queries. Token counts (Section 6) work across both providers and serve as the cost proxy for Gemini deployments.
 
-> *A `per_query` cost of $0.003 with a `per_successful` cost of $0.012 means only one in four queries is producing a sufficient answer. The other three are refusals that still consumed retrieval and filter costs. That gap points to a corpus problem - not a prompt problem.*
+`rag.cost.daily_usd` is also the one card that shows yesterday's spend as a sub-label alongside today's, giving an immediate day-over-day comparison without needing to open the trend chart.
 
 ---
 
@@ -80,12 +80,11 @@ The reverse - rising `tokens_in` with rising `tokens.per_successful` - means ret
 
 Everything in Sections 1–6 comes from the pipeline itself. Those metrics cover how the system behaved. They do not cover whether the user found the answer useful.
 
-Three signals close that gap.
+Two explicit signals close that gap directly, with the LLM-as-judge faithfulness score from Section 3 completing the picture.
 
 | Metric | What it tells you |
 |---|---|
 | `rag.user.satisfaction_score` | Fraction of 👍 from explicit ratings - direct quality signal |
-| `rag.user.rated_count` | Number of responses rated today - low count means users aren't engaging with the buttons at all |
 | `rag.query.follow_up_rate` | Fraction of vault queries semantically similar to the previous one - implicit retry signal |
 
 **Colour thresholds:**
@@ -99,6 +98,12 @@ A satisfaction score below 60% is a red flag even if citation coverage looks hea
 **Implicit follow-up detection.** A closely related follow-up question immediately after a response is a soft signal the previous answer was incomplete. The system computes cosine similarity between successive query embeddings - reusing embeddings already generated for retrieval, so there is zero extra API cost. A similarity score at or above 0.70 flags the query as a follow-up. Time windows are deliberately ignored: voice users and fast typists would produce false positives with any time-based threshold. 0.70 was empirically chosen to balance semantic sensitivity against false positives.
 
 **LLM-as-judge faithfulness.** The `rag.answer.grounded_score` covered in Section 3 of Part 1 belongs to Answer Quality, not User Feedback - but it is the third signal in the triangulation. Explicit ratings measure *whether users agreed*. Follow-up rate measures *whether users needed more*. Grounded score measures *whether the answer earned their agreement by staying within the evidence*.
+
+Three signals, three angles on the same question:
+
+- `satisfaction_score` - *whether users agreed* with the answer
+- `follow_up_rate` - *whether users needed more* after the answer
+- `answer.grounded_score` - *whether the answer earned their agreement* by staying within the evidence
 
 ---
 
@@ -131,18 +136,36 @@ The dashboard shows a green checkmark when there are no errors today, and a sort
 
 ### The 10-day trend view
 
-*Screenshot: Trend modal open on a metric card, showing a Chart.js line chart*
+The dashboard became genuinely useful only when the team stopped looking at single-day metrics. Snapshots explain incidents. Trends explain systems. Clicking opens a modal with a 10-day line chart for that metric, pre-fetched in the background so the first click is instant.
 
-![10-day Latency Trend - P50](/images/rag_latency_p50.png)
-![10-day Latency Trend - P95](/images/rag_latency_p95.png)
+A single-day reading is a snapshot. Ten days of readings is a monitoring tool. A P95 of 4,950 ms in isolation is ambiguous - the trend chart shows immediately whether that number is flat, climbing, or recovering from a spike.
 
-Every metric card on the dashboard is clickable. Clicking opens a modal with a 10-day line chart for that metric, pre-fetched in the background so the first click is instant.
-
-A single-day reading is a snapshot. Ten days of readings is a monitoring tool. A P95 of 6,800 ms in isolation is ambiguous - the trend chart shows immediately whether that number is flat, climbing, or recovering from a spike.
-
-The chart uses the same colour semantics as the card. A declining `top1_similarity` trend carries more diagnostic weight than a single-day reading below threshold - it means retrieval is getting structurally worse, not just experiencing a noisy day. A `satisfaction_score` falling week over week - even if still in the yellow band - is a stronger signal than a single low reading.
+The chart uses the same colour semantics as the card - green for metrics in the healthy band, yellow for warning. A declining `top1_similarity` trend carries more diagnostic weight than a single-day reading below threshold - it means retrieval is getting structurally worse, not just experiencing a noisy day. A `satisfaction_score` falling week over week - even if still in the yellow band - is a stronger signal than a single low reading.
 
 Trend data is read directly from Firestore across the past 10 days' per-user metric documents. Days with no vault queries show as gaps in the chart, making it immediately obvious whether a metric dropped or whether the system simply was not used that day.
+
+**Latency trends.** P50 tracks query volume loosely. P95 is more sensitive - it follows context window size, not just volume. Both peaked on May 1, but P95 degraded faster than P50 because oversized chunks amplified the long-tail inference cost.
+
+![10-day P50 Latency Trend](/images/rag_latency_p50.png)
+![10-day P95 Latency Trend](/images/rag_latency_p95.png)
+
+**Cost trends.** `daily_usd` held flat across the two peak-volume days then fell steadily through recovery - total spend barely moved while quality collapsed. `cost_per_query` told a similar story. `cost_per_successful` and `cost_per_grounded` told a different one: they spiked sharply on May 1 because the refusal rate hit 36%, meaning the same total spend was being divided across far fewer qualifying answers. A widening gap between these three lines is a corpus signal, not a prompt signal - the model is not misbehaving, the retrieved context is failing to support a sufficient answer. By May 5, with the filter tightened, all three lines had converged again.
+
+![10-day Daily Cost Trend](/images/rag_trend_daily_usd.png)
+![10-day Cost per Query Trend](/images/rag_trend_per_query_usd.png)
+![10-day Cost per Successful Trend](/images/rag_trend_per_successful_usd.png)
+![10-day Cost per Grounded Trend](/images/rag_trend_per_grounded_usd.png)
+
+**Token volume trends.** `tokens_in` and `tokens_out` follow query volume - when usage drops, they drop. `tokens_per_successful` does not follow that pattern. It kept climbing even as volume fell, because oversized chunks were inflating the context window on every query regardless of how many queries there were. That divergence is the diagnostic: volume alone would not have explained the cost problem, but `tokens_per_successful` did. It peaked on May 1 and recovered steadily once the filter threshold was tightened the following day.
+
+![10-day Tokens In Trend](/images/rag_trend_tokens_in.png)
+![10-day Tokens Out Trend](/images/rag_trend_tokens_out.png)
+![10-day Tokens per Successful Trend](/images/rag_trend_tokens_per_successful.png)
+
+**User feedback trends.** Satisfaction fell and follow-up rate climbed in lockstep with `tokens_per_successful` - not with query volume. Users were getting longer, noisier answers and asking the same question again. Both signals began recovering the day after the filter was adjusted, which is the clearest possible confirmation that the filter change was the right fix. `rated_count` tracked volume through the same period, meaning engagement held steady while quality fell - the satisfaction drop was real, not an artefact of fewer users clicking through.
+
+![10-day Satisfaction Score Trend](/images/rag_trend_satisfaction.png)
+![10-day Follow-up Rate Trend](/images/rag_trend_follow_up_rate.png)
 
 ---
 
@@ -171,17 +194,15 @@ This catches regressions that unit tests cannot - changes to chunking parameters
 
 ### What I would add next
 
-The current stack covers the full lifecycle from retrieval through user feedback. A few items are on the roadmap.
+The current stack covers the full lifecycle from retrieval through user feedback. Three gaps remain visible from inside the running system - not as theory, but as questions the dashboard currently cannot answer.
 
-**Chunk freshness tracking.** Tag each chunk with its ingest timestamp. Track the age distribution of chunks appearing in the top-k. Rising mean chunk age is a leading indicator of stale retrieval - it surfaces before the refusal rate has time to climb.
+**Chunk freshness tracking.** The dashboard surfaces retrieval quality but not retrieval age. Tagging each chunk with its ingest timestamp and tracking the age distribution of top-k results would give a leading indicator of stale retrieval - one that surfaces before the refusal rate has had time to climb.
 
-**Query length distribution.** Short queries (under 50 characters) tend to have lower retrieval quality - they are ambiguous and resist HyDE expansion. Bucketing queries by length and correlating with satisfaction and citation coverage would reveal whether short-query handling needs targeted work.
+**Query length distribution.** Short queries (under 50 characters) tend to have lower retrieval quality - they are ambiguous and resist HyDE expansion. Bucketing queries by length and correlating with satisfaction and citation coverage would reveal whether short-query handling needs targeted work. The signals are already in the pipeline; the bucketing is not.
 
-**Embedding drift score.** Compare the centroid of today's query embeddings against a stored baseline. Statistical drift is a leading indicator that the query distribution has shifted away from the corpus. Only meaningful over weeks of data.
+**Per-document retrieval heatmap.** Documents retrieved often but cited rarely are low-quality matches - candidates for re-chunking or removal. Citation indices are already recorded per query; aggregating them across queries to produce a per-document signal is the missing step.
 
-**Per-document retrieval heatmap.** Track which documents are retrieved and cited most frequently. Documents retrieved often but cited rarely are low-quality matches - candidates for re-chunking or removal.
-
-**Explicit Δ% on every card.** Currently, `rag.cost.daily_usd` shows yesterday's cost as a sub-label. Extending that pattern to every card would surface trend signals directly on the dashboard without needing to open the trend modal.
+Two longer-horizon items are on the list but need weeks of data to be meaningful: an embedding drift score comparing today's query centroid against a stored baseline, and explicit Δ% labels on every metric card so trend signals surface on the dashboard without needing to open the trend modal.
 
 ---
 
@@ -197,6 +218,5 @@ The stack described across these two posts - span tracing with a frozen contract
 
 ---
 
-*This is a personal AI assistant I have been building on Google Cloud Run, with integrations for Gmail, Google Calendar, OneDrive, and a full RAG pipeline. The observability stack described here is live and handling real queries.*
+*NB: All the metrics defined in this blog are taken from my personal AI assistant I have been building on Google Cloud Run, with integrations for Google Workspace, Microsoft 365 and a full RAG pipeline. The observability stack described here is live and handling real queries.*
 
-#RAG #LLMOps #Observability #AIEngineering #LangChain #Langfuse #ProductionAI #MLOps #TechLeadership
