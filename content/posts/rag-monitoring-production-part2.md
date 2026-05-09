@@ -9,6 +9,8 @@ draft: false
 
 <br>
 
+![RAG Query Architecture](/images/RAG_Part2.png)
+
 ## Part 2 of 2 - RAG is easy to measure. Harder to trust the measurements.
 
 *Cost compounds quietly. Users don't explain why they stopped asking questions. Errors without a taxonomy are just noise. These are the observability layers that most RAG dashboards skip.*
@@ -33,7 +35,7 @@ This part covers what that behaviour cost, what users thought of it, and what br
 
 Raw cost is straightforward to track. The more useful question is cost *per useful answer*.
 
-| Metric | What it tells you |
+| Metric | What it tells us |
 |---|---|
 | `rag.cost.daily_usd` | Total daily spend - shown alongside yesterday's cost for comparison |
 | `rag.cost.per_query_usd` | Average cost per vault query |
@@ -56,7 +58,7 @@ The gap between these three cost lines is the signal. When `per_successful` dive
 
 Token growth is the leading indicator of future cost growth. Token counts are available across all model providers - OpenAI and Gemini both.
 
-| Metric | What it tells you |
+| Metric | What it tells us |
 |---|---|
 | `rag.tokens.daily_in` | Total prompt tokens today - context window and capacity planning |
 | `rag.tokens.daily_out` | Total completion tokens today - capacity planning |
@@ -82,7 +84,7 @@ Everything in Sections 1–6 comes from the pipeline itself. Those metrics cover
 
 Two explicit signals close that gap directly, with the LLM-as-judge faithfulness score from Section 3 completing the picture.
 
-| Metric | What it tells you |
+| Metric | What it tells us |
 |---|---|
 | `rag.user.satisfaction_score` | Fraction of 👍 from explicit ratings - direct quality signal |
 | `rag.query.follow_up_rate` | Fraction of vault queries semantically similar to the previous one - implicit retry signal |
@@ -192,7 +194,7 @@ This catches regressions that unit tests cannot - changes to chunking parameters
 
 ---
 
-### What I would add next
+### What I would consider further
 
 The current stack covers the full lifecycle from retrieval through user feedback. Three gaps remain visible from inside the running system - not as theory, but as questions the dashboard currently cannot answer.
 
@@ -214,7 +216,7 @@ Building RAG for production means accepting that retrieval quality is a continuo
 
 The stack described across these two posts - span tracing with a frozen contract, per-user metrics aggregation with a read-then-merge flush, structured error taxonomy, SRE alerting with cooldown, an eight-section dashboard with 10-day trend charts, explicit user feedback wired to trace IDs, semantic follow-up detection, an LLM-as-judge faithfulness scorer, and CI gates on both unit correctness and end-to-end retrieval quality - did not emerge all at once. It emerged because each production incident revealed exactly which signal was missing.
 
-> *Build the instrumentation before the incidents make it obvious why it was needed. By then, the trust is already harder to recover than the signal would have been to build.*
+> *Build the signals before the incidents. Trust is harder to rebuild than observability is to add.*
 
 ---
 
