@@ -16,7 +16,7 @@ params:
   # ── Site mode toggle ──────────────────────────────────────────────────────
   # Set to true  → visitors land on the blog; all other nav links are hidden.
   # Set to false → full website with homepage, services, products, etc.
-  blogOnlyMode: true
+  blogOnlyMode: false
   # ─────────────────────────────────────────────────────────────────────────
 
   homeInfoParams:
